@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4c93be76-5984-4b4f-a4f9-7a3b4c7856f3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Scheduler/Job.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Scheduler/Job.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Scheduler/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Scheduler/Test.class" afterDir="false" />
@@ -26,6 +25,12 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
   <component name="RunManager">
     <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -44,22 +49,49 @@
   <component name="SvnConfiguration">
     <configuration />
   </component>
+  <component name="TaskManager">
+    <servers />
+  </component>
   <component name="WindowStateProjectService">
-    <state width="1493" height="242" key="GridCell.Tab.0.bottom" timestamp="1572260078091">
-      <screen x="0" y="0" width="1536" height="920" />
+    <state width="389" height="466" key="DebuggerActiveHint" timestamp="1572267940657">
+      <screen x="0" y="0" width="1714" height="1103" />
+    </state>
+    <state width="389" height="466" key="DebuggerActiveHint/0.0.1714.1103@0.0.1714.1103" timestamp="1572267940657" />
+    <state width="1671" height="373" key="GridCell.Tab.0.bottom" timestamp="1572269736867">
+      <screen x="0" y="0" width="1714" height="1103" />
     </state>
     <state width="1493" height="242" key="GridCell.Tab.0.bottom/0.0.1536.920@0.0.1536.920" timestamp="1572260078091" />
-    <state width="1493" height="242" key="GridCell.Tab.0.center" timestamp="1572260078091">
-      <screen x="0" y="0" width="1536" height="920" />
+    <state width="1671" height="373" key="GridCell.Tab.0.bottom/0.0.1714.1103@0.0.1714.1103" timestamp="1572269736867" />
+    <state width="1671" height="373" key="GridCell.Tab.0.center" timestamp="1572269736867">
+      <screen x="0" y="0" width="1714" height="1103" />
     </state>
     <state width="1493" height="242" key="GridCell.Tab.0.center/0.0.1536.920@0.0.1536.920" timestamp="1572260078091" />
-    <state width="1493" height="242" key="GridCell.Tab.0.left" timestamp="1572260078091">
-      <screen x="0" y="0" width="1536" height="920" />
+    <state width="1671" height="373" key="GridCell.Tab.0.center/0.0.1714.1103@0.0.1714.1103" timestamp="1572269736867" />
+    <state width="1671" height="373" key="GridCell.Tab.0.left" timestamp="1572269736867">
+      <screen x="0" y="0" width="1714" height="1103" />
     </state>
     <state width="1493" height="242" key="GridCell.Tab.0.left/0.0.1536.920@0.0.1536.920" timestamp="1572260078091" />
-    <state width="1493" height="242" key="GridCell.Tab.0.right" timestamp="1572260078091">
-      <screen x="0" y="0" width="1536" height="920" />
+    <state width="1671" height="373" key="GridCell.Tab.0.left/0.0.1714.1103@0.0.1714.1103" timestamp="1572269736867" />
+    <state width="1671" height="373" key="GridCell.Tab.0.right" timestamp="1572269736867">
+      <screen x="0" y="0" width="1714" height="1103" />
     </state>
     <state width="1493" height="242" key="GridCell.Tab.0.right/0.0.1536.920@0.0.1536.920" timestamp="1572260078091" />
+    <state width="1671" height="373" key="GridCell.Tab.0.right/0.0.1714.1103@0.0.1714.1103" timestamp="1572269736867" />
+    <state width="1671" height="373" key="GridCell.Tab.1.bottom" timestamp="1572269736867">
+      <screen x="0" y="0" width="1714" height="1103" />
+    </state>
+    <state width="1671" height="373" key="GridCell.Tab.1.bottom/0.0.1714.1103@0.0.1714.1103" timestamp="1572269736867" />
+    <state width="1671" height="373" key="GridCell.Tab.1.center" timestamp="1572269736867">
+      <screen x="0" y="0" width="1714" height="1103" />
+    </state>
+    <state width="1671" height="373" key="GridCell.Tab.1.center/0.0.1714.1103@0.0.1714.1103" timestamp="1572269736867" />
+    <state width="1671" height="373" key="GridCell.Tab.1.left" timestamp="1572269736867">
+      <screen x="0" y="0" width="1714" height="1103" />
+    </state>
+    <state width="1671" height="373" key="GridCell.Tab.1.left/0.0.1714.1103@0.0.1714.1103" timestamp="1572269736867" />
+    <state width="1671" height="373" key="GridCell.Tab.1.right" timestamp="1572269736867">
+      <screen x="0" y="0" width="1714" height="1103" />
+    </state>
+    <state width="1671" height="373" key="GridCell.Tab.1.right/0.0.1714.1103@0.0.1714.1103" timestamp="1572269736867" />
   </component>
 </project>

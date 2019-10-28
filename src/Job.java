@@ -12,6 +12,8 @@ public class Job {
 	// Number of a job
 	int nummer;
 
+	int vorgaengerFlag;
+
 	//Zeitpunkt des starts
 	Integer start = null;
 
@@ -87,7 +89,9 @@ public class Job {
 					this.vorgaenger().add(job.nummer);
 				}
 			}
+			job.vorgaengerFlag = job.vorgaenger.size();
 		}
+
 	}
 	public static Job[] read(File file) throws FileNotFoundException {
 		

@@ -5,6 +5,7 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Job {
@@ -37,7 +38,9 @@ public class Job {
 	int[] verwendeteResourcen;
 	
 	
-	
+	public String toString() {
+		return "flag: " + vorgaengerFlag + ", start: " + start + ", ende: " + ende + ", vorgänger: " + Arrays.toString(vorgaenger.toArray());
+	}
 	
 	public Job(int nummer, ArrayList<Integer> nachfolger, int dauer, int[] verwendeteResourcen){
 		this.nummer = nummer;

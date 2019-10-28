@@ -22,10 +22,10 @@ public class Test {
 	private static ArrayList<Integer> result = new ArrayList<>();
 
 	public static void main (String[] args) throws FileNotFoundException{
-		//jobs = Job.read(new File("input/j1201_5.sm"));//best makespan=112
-		//resources = Resource.read(new File("input/j1201_5.sm"));
-		jobs = Job.read(new File("input/j12046_8.sm"));
-		resources = Resource.read(new File("input/j12046_8.sm"));
+		jobs = Job.read(new File("input/j1201_5.sm"));//best makespan=112
+		resources = Resource.read(new File("input/j1201_5.sm"));
+		//jobs = Job.read(new File("input/j12046_8.sm"));
+		//resources = Resource.read(new File("input/j12046_8.sm"));
 
 		setup();
 		updatePool(jobs[0]);
@@ -35,19 +35,19 @@ public class Test {
 		alg();
 	}
 
-	public static void printRes() {
+	private static void printResult() {
 		/*
-		for (int[] resTemp : res) {
-			System.out.println(Arrays.toString(resTemp));
+		for(int[] temp: res) {
+			System.out.println(Arrays.toString(temp));
 		}
 		 */
 		System.out.println(Arrays.toString(result.toArray()));
-		System.out.println(Arrays.toString(planbar.toArray()));
-		System.out.println();
+		System.out.println("Dauer: " + jobs[result.get(result.size()-1)-1].ende);
 	}
 
 	private static void alg() {
 		while(!planbar.isEmpty()) {
+			//planbar.sort((e1,e2) -> Integer.valueOf(jobs[e2-1].nachfolger.size()).compareTo(jobs[e1-1].nachfolger.size()));
 			Integer start = frühesterZeitpunkt(jobs[planbar.get(0)-1]);
 			if(start == null) {
 				throw new IllegalArgumentException("Element nicht erlaubt im Pool");
@@ -56,8 +56,8 @@ public class Test {
 				start++;
 			}
 			einplanen(jobs[planbar.get(0)-1], start);
-			printRes();
 		}
+		printResult();
 	}
 
 	private static void einplanen(Job job, int startzeit) {
@@ -128,8 +128,8 @@ public class Test {
 			}
 		}
 		for (int i = 0; i < job.nachfolger.size(); i++) {
-			jobs[job.nachfolger.get(i)].vorgaengerFlag--;
-			if(jobs[job.nachfolger.get(i)].vorgaengerFlag == 0) {
+			jobs[job.nachfolger.get(i)-1].vorgaengerFlag--;
+			if(jobs[job.nachfolger.get(i)-1].vorgaengerFlag == 0) {
 				planbar.add(job.nachfolger.get(i));
 			}
 		}

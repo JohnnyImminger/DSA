@@ -25,8 +25,15 @@ public class Test {
 
 		setup();
 		updatePool(jobs[0]);
-		System.out.println(planbar.size());
 
+	}
+
+	private static void alg() {
+		while(!planbar.isEmpty()) {
+
+
+
+		}
 	}
 
 	private static void setup() {
@@ -42,10 +49,12 @@ public class Test {
 	}
 
 	private static void updatePool(Job job) {
-		if(!(planbar.contains(job.nummer) && job.nummer == 0)) {
-			throw new IllegalArgumentException();
+		if(job.nummer != 1) {
+			if (!planbar.contains(job.nummer)) {
+					throw new IllegalArgumentException();
+			}
+			planbar.remove(planbar.indexOf(job.nummer));
 		}
-		planbar.remove(planbar.indexOf(job.nummer));
 		planbar.addAll(new ArrayList<Integer>(job.nachfolger));
 	}
 

@@ -11,6 +11,12 @@ public class Job {
 
 	// Number of a job
 	int nummer;
+
+	//Zeitpunkt des starts
+	Integer start = null;
+
+	//zeitpunkt des endes
+	Integer ende = null;
 	
 	// successors; each element contains the job-number (int)
 	ArrayList<Integer> nachfolger;

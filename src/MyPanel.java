@@ -1,8 +1,6 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.geom.Line2D;
-import java.util.Arrays;
-import java.util.Collections;
 
 public class MyPanel extends JPanel {
 
@@ -125,7 +123,21 @@ public class MyPanel extends JPanel {
         g.setColor(Color.red);
         Graphics2D g3 = (Graphics2D) g;
         g3.setStroke(new BasicStroke(4));
-        g3.draw(new Line2D.Float(0,this.getHeight()/4*currentRow-getMaxRes(currentRow)*20,this.getWidth(),this.getHeight()/4*currentRow-getMaxRes(currentRow)*20));
+        int r;
+        switch (currentRow){
+            case 1: r = 4;
+                g3.draw(new Line2D.Float(0, this.getHeight() / 4 * r - getMaxRes(currentRow) * 20, this.getWidth(), this.getHeight() / 4 * r - getMaxRes(currentRow) * 20));
+                break;
+            case 2: r = 3;
+                g3.draw(new Line2D.Float(0, this.getHeight() / 4 * r - getMaxRes(currentRow) * 20, this.getWidth(), this.getHeight() / 4 * r - getMaxRes(currentRow) * 20));
+                break;
+            case 3: r = 2;
+                g3.draw(new Line2D.Float(0, this.getHeight() / 4 * r - getMaxRes(currentRow) * 20, this.getWidth(), this.getHeight() / 4 * r - getMaxRes(currentRow) * 20));
+                break;
+            case 4: r = 1;
+                g3.draw(new Line2D.Float(0, this.getHeight() / 4 * r - getMaxRes(currentRow) * 20, this.getWidth(), this.getHeight() / 4 * r - getMaxRes(currentRow) * 20));
+                break;
+        }
     }
 
 }

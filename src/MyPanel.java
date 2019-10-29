@@ -28,6 +28,14 @@ public class MyPanel extends JPanel {
         g.setColor(Color.darkGray);//Background Color
         g.fillRect(0,0,parent.getWidth(),parent.getHeight()); //Background
 
+        for(int c = 1; c <= resources[0].length;c++) {
+            g.setColor(Color.black);
+            Graphics2D g2 = (Graphics2D) g;
+            g2.setStroke(new BasicStroke(1));
+            for (int i = (this.getHeight() / this.resources[0].length * (c - 1))+3; i < (this.getHeight() / this.resources[0].length * (c))+3; i += 20) {
+                g2.draw(new Line2D.Float(0, i, this.getWidth(), i));
+            }
+        }
 
         for (int i = 1 ;i <= resources[0].length;i++) {
             paintGraph(g,i);
@@ -75,6 +83,12 @@ public class MyPanel extends JPanel {
             throw new IllegalArgumentException("rowcount to large data not parent or 0");
         }
 
+        g.setColor(Color.black);
+        Graphics2D g2 = (Graphics2D) g;
+        g2.setStroke(new BasicStroke(4));
+        g2.draw(new Line2D.Float(0,(this.getHeight()/this.resources[0].length*currentRow)+2,this.getWidth(),(this.getHeight()/this.resources[0].length*currentRow)+2));
+
+
         switch (currentRow) {
             case 1:
                 g.setColor(Color.BLUE);
@@ -107,11 +121,6 @@ public class MyPanel extends JPanel {
             runNr++;
             if(runNr > this.dauer)break;
         }
-
-        g.setColor(Color.black);
-        Graphics2D g2 = (Graphics2D) g;
-        g2.setStroke(new BasicStroke(4));
-        g2.draw(new Line2D.Float(0,(this.getHeight()/4*currentRow)+2,this.getWidth(),(this.getHeight()/4*currentRow)+2));
 
         g.setColor(Color.red);
         Graphics2D g3 = (Graphics2D) g;

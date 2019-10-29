@@ -1,22 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4c93be76-5984-4b4f-a4f9-7a3b4c7856f3" name="Default Changelist" comment="Gui done">
-      <change afterPath="$PROJECT_DIR$/out/production/Scheduler/Gui.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Scheduler/META-INF/Scheduler.kotlin_module" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Scheduler/MyPanel.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Scheduler/com/intellij/uiDesigner/core/AbstractLayout.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Scheduler/com/intellij/uiDesigner/core/DimensionInfo.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Scheduler/com/intellij/uiDesigner/core/GridConstraints.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Scheduler/com/intellij/uiDesigner/core/GridLayoutManager.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Scheduler/com/intellij/uiDesigner/core/HorizontalInfo.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Scheduler/com/intellij/uiDesigner/core/LayoutState.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Scheduler/com/intellij/uiDesigner/core/Spacer.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Scheduler/com/intellij/uiDesigner/core/SupportCode$TextWithMnemonic.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Scheduler/com/intellij/uiDesigner/core/SupportCode.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Scheduler/com/intellij/uiDesigner/core/Util.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Scheduler/com/intellij/uiDesigner/core/VerticalInfo.class" afterDir="false" />
+    <list default="true" id="4c93be76-5984-4b4f-a4f9-7a3b4c7856f3" name="Default Changelist" comment="fixed drawing and better graphs should skale for more than 4 res.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Scheduler/MyPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Scheduler/MyPanel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MyPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyPanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -85,9 +72,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1572350300928</updated>
-      <workItem from="1572350308673" duration="5385000" />
+      <workItem from="1572350308673" duration="7363000" />
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="fixed drawing and better graphs should skale for more than 4 res.">
+      <created>1572359697376</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1572359697376</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -95,7 +89,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Gui done" />
-    <option name="LAST_COMMIT_MESSAGE" value="Gui done" />
+    <MESSAGE value="fixed drawing and better graphs should skale for more than 4 res." />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed drawing and better graphs should skale for more than 4 res." />
   </component>
   <component name="WindowStateProjectService">
     <state x="653" y="436" width="407" height="239" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1572337561216">
@@ -110,26 +105,26 @@
       <screen x="0" y="0" width="1714" height="1103" />
     </state>
     <state width="389" height="466" key="DebuggerActiveHint/0.0.1714.1103@0.0.1714.1103" timestamp="1572267940657" />
-    <state width="1671" height="299" key="GridCell.Tab.0.bottom" timestamp="1572359495583">
+    <state width="1671" height="82" key="GridCell.Tab.0.bottom" timestamp="1572361881098">
       <screen x="0" y="0" width="1714" height="1103" />
     </state>
     <state width="1493" height="242" key="GridCell.Tab.0.bottom/0.0.1536.920@0.0.1536.920" timestamp="1572272276083" />
-    <state width="1671" height="299" key="GridCell.Tab.0.bottom/0.0.1714.1103@0.0.1714.1103" timestamp="1572359495583" />
-    <state width="1671" height="299" key="GridCell.Tab.0.center" timestamp="1572359495583">
+    <state width="1671" height="82" key="GridCell.Tab.0.bottom/0.0.1714.1103@0.0.1714.1103" timestamp="1572361881098" />
+    <state width="1671" height="82" key="GridCell.Tab.0.center" timestamp="1572361881083">
       <screen x="0" y="0" width="1714" height="1103" />
     </state>
     <state width="1493" height="242" key="GridCell.Tab.0.center/0.0.1536.920@0.0.1536.920" timestamp="1572272276083" />
-    <state width="1671" height="299" key="GridCell.Tab.0.center/0.0.1714.1103@0.0.1714.1103" timestamp="1572359495583" />
-    <state width="1671" height="299" key="GridCell.Tab.0.left" timestamp="1572359495583">
+    <state width="1671" height="82" key="GridCell.Tab.0.center/0.0.1714.1103@0.0.1714.1103" timestamp="1572361881083" />
+    <state width="1671" height="82" key="GridCell.Tab.0.left" timestamp="1572361881083">
       <screen x="0" y="0" width="1714" height="1103" />
     </state>
     <state width="1493" height="242" key="GridCell.Tab.0.left/0.0.1536.920@0.0.1536.920" timestamp="1572272276083" />
-    <state width="1671" height="299" key="GridCell.Tab.0.left/0.0.1714.1103@0.0.1714.1103" timestamp="1572359495583" />
-    <state width="1671" height="299" key="GridCell.Tab.0.right" timestamp="1572359495583">
+    <state width="1671" height="82" key="GridCell.Tab.0.left/0.0.1714.1103@0.0.1714.1103" timestamp="1572361881083" />
+    <state width="1671" height="82" key="GridCell.Tab.0.right" timestamp="1572361881098">
       <screen x="0" y="0" width="1714" height="1103" />
     </state>
     <state width="1493" height="242" key="GridCell.Tab.0.right/0.0.1536.920@0.0.1536.920" timestamp="1572272276083" />
-    <state width="1671" height="299" key="GridCell.Tab.0.right/0.0.1714.1103@0.0.1714.1103" timestamp="1572359495583" />
+    <state width="1671" height="82" key="GridCell.Tab.0.right/0.0.1714.1103@0.0.1714.1103" timestamp="1572361881098" />
     <state width="1671" height="373" key="GridCell.Tab.1.bottom" timestamp="1572269736867">
       <screen x="0" y="0" width="1714" height="1103" />
     </state>

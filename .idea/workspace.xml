@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4c93be76-5984-4b4f-a4f9-7a3b4c7856f3" name="Default Changelist" comment="painting scale now">
+    <list default="true" id="4c93be76-5984-4b4f-a4f9-7a3b4c7856f3" name="Default Changelist" comment="fixed red limits">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Scheduler/MyPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Scheduler/MyPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Scheduler/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Scheduler/Test.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MyPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Test.java" afterDir="false" />
     </list>
@@ -74,7 +76,9 @@
       <updated>1572350300928</updated>
       <workItem from="1572350308673" duration="7604000" />
       <workItem from="1572362313124" duration="353000" />
-      <workItem from="1572362693568" duration="998000" />
+      <workItem from="1572362693568" duration="3139000" />
+      <workItem from="1572423908046" duration="1462000" />
+      <workItem from="1572429935575" duration="935000" />
     </task>
     <task id="LOCAL-00002" summary="fixed drawing and better graphs should skale for more than 4 res.">
       <created>1572359697376</created>
@@ -90,7 +94,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572361989935</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="fixed red limits">
+      <created>1572363973836</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1572363973836</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -100,7 +111,8 @@
     <MESSAGE value="Gui done" />
     <MESSAGE value="fixed drawing and better graphs should skale for more than 4 res." />
     <MESSAGE value="painting scale now" />
-    <option name="LAST_COMMIT_MESSAGE" value="painting scale now" />
+    <MESSAGE value="fixed red limits" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed red limits" />
   </component>
   <component name="WindowStateProjectService">
     <state x="653" y="436" width="407" height="239" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1572337561216">
@@ -115,26 +127,30 @@
       <screen x="0" y="0" width="1714" height="1103" />
     </state>
     <state width="389" height="466" key="DebuggerActiveHint/0.0.1714.1103@0.0.1714.1103" timestamp="1572267940657" />
-    <state width="1671" height="226" key="GridCell.Tab.0.bottom" timestamp="1572363883490">
+    <state x="638" y="306" key="FileChooserDialogImpl" timestamp="1572425374256">
+      <screen x="0" y="0" width="1714" height="1103" />
+    </state>
+    <state x="638" y="306" key="FileChooserDialogImpl/0.0.1714.1103@0.0.1714.1103" timestamp="1572425374256" />
+    <state width="1671" height="306" key="GridCell.Tab.0.bottom" timestamp="1572430779191">
       <screen x="0" y="0" width="1714" height="1103" />
     </state>
     <state width="1493" height="242" key="GridCell.Tab.0.bottom/0.0.1536.920@0.0.1536.920" timestamp="1572272276083" />
-    <state width="1671" height="226" key="GridCell.Tab.0.bottom/0.0.1714.1103@0.0.1714.1103" timestamp="1572363883490" />
-    <state width="1671" height="226" key="GridCell.Tab.0.center" timestamp="1572363883490">
+    <state width="1671" height="306" key="GridCell.Tab.0.bottom/0.0.1714.1103@0.0.1714.1103" timestamp="1572430779191" />
+    <state width="1671" height="306" key="GridCell.Tab.0.center" timestamp="1572430779191">
       <screen x="0" y="0" width="1714" height="1103" />
     </state>
     <state width="1493" height="242" key="GridCell.Tab.0.center/0.0.1536.920@0.0.1536.920" timestamp="1572272276083" />
-    <state width="1671" height="226" key="GridCell.Tab.0.center/0.0.1714.1103@0.0.1714.1103" timestamp="1572363883490" />
-    <state width="1671" height="226" key="GridCell.Tab.0.left" timestamp="1572363883490">
+    <state width="1671" height="306" key="GridCell.Tab.0.center/0.0.1714.1103@0.0.1714.1103" timestamp="1572430779191" />
+    <state width="1671" height="306" key="GridCell.Tab.0.left" timestamp="1572430779191">
       <screen x="0" y="0" width="1714" height="1103" />
     </state>
     <state width="1493" height="242" key="GridCell.Tab.0.left/0.0.1536.920@0.0.1536.920" timestamp="1572272276083" />
-    <state width="1671" height="226" key="GridCell.Tab.0.left/0.0.1714.1103@0.0.1714.1103" timestamp="1572363883490" />
-    <state width="1671" height="226" key="GridCell.Tab.0.right" timestamp="1572363883490">
+    <state width="1671" height="306" key="GridCell.Tab.0.left/0.0.1714.1103@0.0.1714.1103" timestamp="1572430779191" />
+    <state width="1671" height="306" key="GridCell.Tab.0.right" timestamp="1572430779191">
       <screen x="0" y="0" width="1714" height="1103" />
     </state>
     <state width="1493" height="242" key="GridCell.Tab.0.right/0.0.1536.920@0.0.1536.920" timestamp="1572272276083" />
-    <state width="1671" height="226" key="GridCell.Tab.0.right/0.0.1714.1103@0.0.1714.1103" timestamp="1572363883490" />
+    <state width="1671" height="306" key="GridCell.Tab.0.right/0.0.1714.1103@0.0.1714.1103" timestamp="1572430779191" />
     <state width="1671" height="373" key="GridCell.Tab.1.bottom" timestamp="1572269736867">
       <screen x="0" y="0" width="1714" height="1103" />
     </state>
@@ -151,10 +167,10 @@
       <screen x="0" y="0" width="1714" height="1103" />
     </state>
     <state width="1671" height="373" key="GridCell.Tab.1.right/0.0.1714.1103@0.0.1714.1103" timestamp="1572269736867" />
-    <state x="237" y="468" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1572350263326">
+    <state x="237" y="468" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1572376801692">
       <screen x="0" y="0" width="1714" height="1103" />
     </state>
-    <state x="237" y="468" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1714.1103@0.0.1714.1103" timestamp="1572350263326" />
+    <state x="237" y="468" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1714.1103@0.0.1714.1103" timestamp="1572376801692" />
     <state x="520" y="241" width="672" height="678" key="search.everywhere.popup" timestamp="1572339305380">
       <screen x="0" y="0" width="1714" height="1103" />
     </state>

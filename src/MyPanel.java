@@ -106,7 +106,7 @@ public class MyPanel extends JPanel {
         for (int[] res: resources) {
             int resNr = 1;
             for (int unUsed : res) {
-                //System.out.println("at Run "+runNr+" with Recource "+resNr+": "+unUsed+" left");
+                // System.out.println("at Run "+runNr+" with Recource "+resNr+": "+unUsed+" left");
                 if (resNr == currentRow){
 
                     paintUpRect(runNr*10,(((currentRow-1)*(this.getHeight()/this.resources[0].length))),9,(getMaxRes(currentRow)-unUsed)*20,g);

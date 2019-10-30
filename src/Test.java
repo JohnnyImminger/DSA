@@ -2,9 +2,9 @@
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Random;
 
 public class Test {
 	
@@ -22,10 +22,10 @@ public class Test {
 	private static ArrayList<Integer> result = new ArrayList<>();
 
 	public static void main (String[] args) throws FileNotFoundException{
-		//jobs = Job.read(new File("input/j1201_5.sm"));//best makespan=112
-		//resources = Resource.read(new File("input/j1201_5.sm"));
-		jobs = Job.read(new File("input/j12046_8.sm"));
-		resources = Resource.read(new File("input/j12046_8.sm"));
+		jobs = Job.read(new File("input/j1201_5.sm"));//best makespan=112
+		resources = Resource.read(new File("input/j1201_5.sm"));
+		//jobs = Job.read(new File("input/j12046_8.sm"));
+		//resources = Resource.read(new File("input/j12046_8.sm"));
 
 		setup();
 		updatePool(jobs[0]);
@@ -48,8 +48,8 @@ public class Test {
 
 	private static void alg() {
 		while(!planbar.isEmpty()) {
-			//planbar.sort((e1,e2) -> Integer.valueOf(jobs[e2-1].nachfolger.size()).compareTo(jobs[e1-1].nachfolger.size()));
-			Integer start = frühesterZeitpunkt(jobs[planbar.get(0)-1]);
+			planbar.sort((e1, e2) -> Integer.valueOf(jobs[e2 - 1].nachfolger.size()).compareTo(jobs[e1 - 1].nachfolger.size()));
+			Integer start = fruehesterZeitpunkt(jobs[planbar.get(0)-1]);
 			if(start == null) {
 				throw new IllegalArgumentException("Element nicht erlaubt im Pool");
 			}
@@ -84,13 +84,10 @@ public class Test {
 				platz++;
 			}
 		}
-		if(platz == job.dauer) {
-			return true;
-		}
-		return false;
+		return platz == job.dauer;
 	}
 
-	private static Integer frühesterZeitpunkt(Job job) {
+	private static Integer fruehesterZeitpunkt(Job job) {
 		int min = 0;
 		for (int i = 0; i < job.vorgaenger.size(); i++) {
 			if(jobs[job.vorgaenger.get(i)-1].ende == null) {
@@ -102,9 +99,9 @@ public class Test {
 	}
 
 	private static void setup() {
-		for(int i = 0; i < jobs.length; i++){
-			jobs[i].calculatePredecessors(jobs);
-			horizon += jobs[i].dauer;
+		for (Job job : jobs) {
+			job.calculatePredecessors(jobs);
+			horizon += job.dauer;
 		}
 		res = new int[horizon][4];
 		res1 = resources[0].maxVerfuegbarkeit;
@@ -138,34 +135,31 @@ public class Test {
 
 	private static void auslesen(Job[] jobs) {
 		int gesamtDauer = 0;
-		for (int i = 0; i < jobs.length; i++){
-			gesamtDauer += jobs[i].dauer();
-			
-			System.out.print("Nummer: " + jobs[i].nummer()+"     |    ");
+		for (Job job : jobs) {
+			gesamtDauer += job.dauer();
+
+			System.out.print("Nummer: " + job.nummer() + "     |    ");
 			System.out.print("Nachfolger: ");
-			ArrayList<Integer> nachfolger = jobs[i].nachfolger();
-			for(int j = 0; j < nachfolger.size(); j++){
-				System.out.print(" " + nachfolger.get(j) +" ");
-				
+			ArrayList<Integer> nachfolger = job.nachfolger();
+			for (Integer value : nachfolger) {
+				System.out.print(" " + value + " ");
+
 			}
 			System.out.print(" Vorgaenger: ");
-			ArrayList<Integer> vorgaenger = jobs[i].vorgaenger();
-			for(int j = 0; j < vorgaenger.size(); j++){
-				System.out.print(" " + vorgaenger.get(j) +" ");
-				
-			}
+			ArrayList<Integer> vorgaenger = job.vorgaenger();
+			vorgaenger.stream().map(integer -> " " + integer + " ").forEach(System.out::print);
 			System.out.print("     |    ");
-			System.out.print("Dauer: " + jobs[i].dauer() + "     |    ");
-			System.out.println("R1: " + jobs[i].verwendeteResource(0) +  "  R2: " + jobs[i].verwendeteResource(1) + 
-					"  R3: " + jobs[i].verwendeteResource(2) + "  R4: " + jobs[i].verwendeteResource(3));
+			System.out.print("Dauer: " + job.dauer() + "     |    ");
+			System.out.println("R1: " + job.verwendeteResource(0) + "  R2: " + job.verwendeteResource(1) +
+					"  R3: " + job.verwendeteResource(2) + "  R4: " + job.verwendeteResource(3));
 		}
 		System.out.println("T = " + gesamtDauer);
 	}
 	
 	private static void auslesen(Resource[] resource) {
-		for (int i = 0; i < resource.length; i++){
-			System.out.print("Resource: " + resource[i].nummer()+"     |    ");
-			System.out.println("Verf�gbarkeit: " + resource[i].maxVerfuegbarkeit());
+		for (Resource value : resource) {
+			System.out.print("Resource: " + value.nummer() + "     |    ");
+			System.out.println("Verfuegbarkeit: " + value.maxVerfuegbarkeit());
 		}
 	}
 }

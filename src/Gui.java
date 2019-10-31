@@ -11,7 +11,7 @@ public class Gui extends JFrame {
         this.setAlwaysOnTop(true);
 
         this.setContentPane(this.panel);
-        this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        this.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         this.setVisible(true);
     }
 }

@@ -19,9 +19,9 @@ public class Gui extends JFrame {
             public void keyPressed(KeyEvent e) {
                 super.keyPressed(e);
                 if (opacity != 1){
-                    if(e.getKeyCode() == KeyEvent.VK_F1)System.exit(0);
+                    if(e.getKeyCode() == KeyEvent.VK_F1)dispose();
                 }else {
-                    if(e.getKeyCode() == KeyEvent.VK_F2)System.exit(0);
+                    if(e.getKeyCode() == KeyEvent.VK_F2)dispose();
                 }
             }
         });

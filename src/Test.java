@@ -22,10 +22,10 @@ public class Test {
 	private static ArrayList<Integer> result = new ArrayList<>();
 
 	public static void main (String[] args) throws FileNotFoundException{
-		jobs = Job.read(new File("input/j1201_5.sm"));//best makespan=112
-		resources = Resource.read(new File("input/j1201_5.sm"));
-		//jobs = Job.read(new File("input/j12046_8.sm"));
-		//resources = Resource.read(new File("input/j12046_8.sm"));
+		//jobs = Job.read(new File("input/j1201_5.sm"));//best makespan=112
+		//resources = Resource.read(new File("input/j1201_5.sm"));
+		jobs = Job.read(new File("input/j12046_8.sm"));
+		resources = Resource.read(new File("input/j12046_8.sm"));
 
 		setup();
 		updatePool(jobs[0]);
@@ -42,14 +42,9 @@ public class Test {
 	}
 
 	private static void printResult() {
-		/*
-		for(int[] temp: res) {
-			System.out.println(Arrays.toString(temp));
-		}
-		 */
 		System.out.println(Arrays.toString(result.toArray()));
 		System.out.println("Dauer: " + jobs[result.get(result.size()-1)-1].ende);
-		Gui g = new Gui(result.stream().mapToInt(i -> i).toArray() ,jobs[result.get(result.size()-1)-1].ende ,res,1f);
+		new Gui(result.stream().mapToInt(i -> i).toArray() ,jobs[result.get(result.size()-1)-1].ende ,res,1f);
 	}
 
 	private static void alg() {

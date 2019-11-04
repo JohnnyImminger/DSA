@@ -2,30 +2,34 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.geom.Line2D;
 
-public class MyPanel extends JPanel {
+public class MyPanel extends javax.swing.JPanel {
 
-    private JFrame parent;
     int[][] resources;
     int[] resultArray;
     int dauer;
     int maxRes;
+    int scaleHeight;
+    int scaleWidth;
+    private JFrame parent;
+    private Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 
     public MyPanel(JFrame parent, int[] resultArray, int[][] resources , int dauer){
         this.parent = parent;
+        this.scaleWidth = 30*(dauer+5);
+        initComponents();
         this.resources = resources;
         this.resultArray = resultArray;
         this.dauer = dauer;
-        this.parent.setResizable(false);
         this.maxRes = this.getMaxRes();
-        this.parent.setSize((dauer*10)+6,(4*maxRes*20)+46+(4*resources[0].length));//4 for the red Border-Lines
+        this.scaleHeight = ((screenSize.height-20)/(resources[0].length))/maxRes;
+
         this.repaint();
     }
 
     @Override
     public void paintComponent(Graphics g){
         g.setColor(Color.darkGray);//Background Color
-        g.fillRect(0,0,parent.getWidth(),parent.getHeight()); //Background
-
+        g.fillRect(0,0,scaleWidth,parent.getHeight()); //Background
         for(int c = 1; c <= resources[0].length;c++) {
             g.setColor(Color.black);
             Graphics2D g2 = (Graphics2D) g;
@@ -34,7 +38,6 @@ public class MyPanel extends JPanel {
                 g2.draw(new Line2D.Float(0, i, this.getWidth(), i));
             }
         }
-
         for (int i = 1 ;i <= resources[0].length;i++) {
             paintGraph(g,i);
         }
@@ -45,9 +48,9 @@ public class MyPanel extends JPanel {
         int maxresult = 0;
         for (int[] res: resources) {
             for (int i : res) {
-               if (i > maxresult){
-                   maxresult = i;
-               }
+                if (i > maxresult){
+                    maxresult = i;
+                }
             }
             runNr++;
             if(runNr > this.dauer)break;
@@ -108,11 +111,7 @@ public class MyPanel extends JPanel {
             for (int unUsed : res) {
                 // System.out.println("at Run "+runNr+" with Recource "+resNr+": "+unUsed+" left");
                 if (resNr == currentRow){
-
-                    paintUpRect(runNr*10,(((currentRow-1)*(this.getHeight()/this.resources[0].length))),9,(getMaxRes(currentRow)-unUsed)*20,g);
-
-
-
+                    paintUpRect(runNr*30,(((currentRow-1)*(this.getHeight()/this.resources[0].length))),29,(getMaxRes(currentRow)-unUsed)*20,g);
                 }
                 resNr++;
             }
@@ -140,5 +139,21 @@ public class MyPanel extends JPanel {
         }
     }
 
-}
 
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(0, scaleWidth , Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(0, this.screenSize.height-20 , Short.MAX_VALUE)
+        );
+    }
+
+}

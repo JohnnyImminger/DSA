@@ -33,6 +33,12 @@ public class Test {
 		jobs[0].ende = 0;
 
 		alg();
+
+		printResult();
+
+		Shift s = new Shift(jobs, resources, res, result, jobs[result.get(result.size()-1)-1].ende);
+		s.run();
+		s.dispResult();
 	}
 
 	private static void printResult() {
@@ -48,7 +54,7 @@ public class Test {
 
 	private static void alg() {
 		while(!planbar.isEmpty()) {
-			planbar.sort((e1, e2) -> Integer.valueOf(jobs[e2 - 1].nachfolger.size()).compareTo(jobs[e1 - 1].nachfolger.size()));
+			planbar.sort((e1,e2) -> Integer.compare(jobs[e2 - 1].nachfolger.size(),jobs[e1 - 1].nachfolger.size()));
 			Integer start = fruehesterZeitpunkt(jobs[planbar.get(0)-1]);
 			if(start == null) {
 				throw new IllegalArgumentException("Element nicht erlaubt im Pool");
@@ -58,7 +64,6 @@ public class Test {
 			}
 			einplanen(jobs[planbar.get(0)-1], start);
 		}
-		printResult();
 	}
 
 	private static void einplanen(Job job, int startzeit) {
@@ -160,6 +165,25 @@ public class Test {
 		for (Resource value : resource) {
 			System.out.print("Resource: " + value.nummer() + "     |    ");
 			System.out.println("Verfuegbarkeit: " + value.maxVerfuegbarkeit());
+		}
+	}
+
+	public static int getHorizon() {
+		return horizon;
+	}
+
+	public static int getRes(int num) {
+		switch (num) {
+			case 0:
+				return res1;
+			case 1:
+				return res2;
+			case 2:
+				return res3;
+			case 3:
+				return res4;
+			default:
+				throw new IllegalArgumentException("Arg has to be between 0 and 3!");
 		}
 	}
 }

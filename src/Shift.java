@@ -20,8 +20,8 @@ public class Shift {
     }
 
     public void dispResult() {
-        System.out.println((result.get(this.result.size() - 1)).ende);
-        new Gui(result.stream().mapToInt((i) -> i.nummer).toArray(), (result.get(result.size() - 1)).ende, res);
+        System.out.println("Nach dem shift: "+(result.get(this.result.size() - 1)).ende);
+        new Gui(result.stream().mapToInt((i) -> i.nummer).toArray(), (result.get(result.size() - 1)).ende, res,0.5f);
     }
 
     public void run() {

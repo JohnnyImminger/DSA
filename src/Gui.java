@@ -9,11 +9,11 @@ public class Gui extends JFrame {
     public javax.swing.JScrollPane jScrollPane;
     private Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 
-    public Gui(int[] resultArray, Integer dauer, int[][] resources) {
+    public Gui(int[] resultArray, Integer dauer, int[][] resources, float opacity) {
         this.panel = new MyPanel(this, resultArray, resources ,dauer);
         initComponents();
         this.setVisible(true);
-        setOpacity(1f);
+        setOpacity(opacity);
     }
 
     private void initComponents() {

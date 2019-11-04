@@ -13,7 +13,7 @@ public class Gui extends JFrame {
         this.panel = new MyPanel(this, resultArray, resources ,dauer);
         initComponents();
         this.setVisible(true);
-        setOpacity(0.1f);
+        setOpacity(1f);
     }
 
     private void initComponents() {
@@ -22,7 +22,6 @@ public class Gui extends JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         jScrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
-        //jScrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
         jScrollPane.getHorizontalScrollBar().setUnitIncrement(100);
         jScrollPane.getViewport().setScrollMode(JViewport.SIMPLE_SCROLL_MODE);
         jScrollPane.setViewportView(panel);

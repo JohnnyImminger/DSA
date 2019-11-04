@@ -30,13 +30,9 @@ public class MyPanel extends javax.swing.JPanel {
     public void paintComponent(Graphics g){
         g.setColor(Color.darkGray);//Background Color
         g.fillRect(0,0,scaleWidth,parent.getHeight()); //Background
-        for(int c = 1; c <= resources[0].length;c++) {
-            g.setColor(Color.black);
-            Graphics2D g2 = (Graphics2D) g;
-            g2.setStroke(new BasicStroke(1));
-            for (int i = (this.getHeight() / this.resources[0].length * (c - 1))+3; i < (this.getHeight() / this.resources[0].length * (c))+3; i += 20) {
-                g2.draw(new Line2D.Float(0, i, this.getWidth(), i));
-            }
+
+        for (int i = 1 ;i <= resources[0].length;i++) {
+            paintRaster(i,g);
         }
         for (int i = 1 ;i <= resources[0].length;i++) {
             paintGraph(g,i);
@@ -79,17 +75,17 @@ public class MyPanel extends javax.swing.JPanel {
         g.fillRect(x,this.getHeight()-height-y, with,height);
     }
 
+    private void paintRaster(int currentRow, Graphics g){
+        g.setColor(Color.black);
+        for(int i = 0; i < maxRes*scaleHeight; i += scaleHeight){
+            g.drawLine(0,((screenSize.height-20)/4*(currentRow-1))+i+6,scaleWidth,((screenSize.height-20)/4*(currentRow-1))+i+6); // I dont know why 6 ...
+        }
+    }
+
     private void paintGraph(Graphics g, int  currentRow){
         if(currentRow > this.resources[0].length || currentRow == 0){
             throw new IllegalArgumentException("rowcount to large data not parent or 0");
         }
-
-        g.setColor(Color.black);
-        Graphics2D g2 = (Graphics2D) g;
-        g2.setStroke(new BasicStroke(4));
-        g2.draw(new Line2D.Float(0,(this.getHeight()/this.resources[0].length*currentRow)+2,this.getWidth(),(this.getHeight()/this.resources[0].length*currentRow)+2));
-
-
         switch (currentRow) {
             case 1:
                 g.setColor(Color.BLUE);
@@ -105,13 +101,15 @@ public class MyPanel extends javax.swing.JPanel {
                 break;
         }
 
+
+
         int runNr = 0;
         for (int[] res: resources) {
             int resNr = 1;
             for (int unUsed : res) {
                 // System.out.println("at Run "+runNr+" with Recource "+resNr+": "+unUsed+" left");
                 if (resNr == currentRow){
-                    paintUpRect(runNr*30,(((currentRow-1)*(this.getHeight()/this.resources[0].length))),29,(getMaxRes(currentRow)-unUsed)*20,g);
+                    paintUpRect(runNr*30,(((currentRow-1)*((screenSize.height-20)/this.resources[0].length))),29,(getMaxRes(currentRow)-unUsed)*scaleHeight,g);
                 }
                 resNr++;
             }
@@ -119,24 +117,34 @@ public class MyPanel extends javax.swing.JPanel {
             if(runNr > this.dauer)break;
         }
 
-        g.setColor(Color.red);
-        Graphics2D g3 = (Graphics2D) g;
+        g.setColor(Color.black);
+        Graphics2D g2 = (Graphics2D) g.create();
+        g2.setStroke(new BasicStroke(4));
+        g2.setColor(Color.black);
+        Graphics2D g3 = (Graphics2D) g.create();
         g3.setStroke(new BasicStroke(4));
+        g3.setColor(Color.red);
         int r;
         switch (currentRow){
             case 1: r = 4;
-                g3.draw(new Line2D.Float(0, this.getHeight() / 4 * r - getMaxRes(currentRow) * 20, this.getWidth(), this.getHeight() / 4 * r - getMaxRes(currentRow) * 20));
+                g3.draw(new Line2D.Float(0, (screenSize.height-20) / 4 * r - getMaxRes(currentRow) * scaleHeight, this.getWidth(), (screenSize.height-20) / 4 * r - getMaxRes(currentRow) * scaleHeight));
+                g2.draw(new Line2D.Float(0, (screenSize.height-20) / 4 * r, this.getWidth(), (screenSize.height-20) / 4 * r));
                 break;
             case 2: r = 3;
-                g3.draw(new Line2D.Float(0, this.getHeight() / 4 * r - getMaxRes(currentRow) * 20, this.getWidth(), this.getHeight() / 4 * r - getMaxRes(currentRow) * 20));
+                g3.draw(new Line2D.Float(0, (screenSize.height-20) / 4 * r - getMaxRes(currentRow) * scaleHeight, this.getWidth(), (screenSize.height-20) / 4 * r - getMaxRes(currentRow) * scaleHeight));
+                g2.draw(new Line2D.Float(0, (screenSize.height-20) / 4 * r, this.getWidth(), (screenSize.height-20) / 4 * r));
                 break;
             case 3: r = 2;
-                g3.draw(new Line2D.Float(0, this.getHeight() / 4 * r - getMaxRes(currentRow) * 20, this.getWidth(), this.getHeight() / 4 * r - getMaxRes(currentRow) * 20));
+                g3.draw(new Line2D.Float(0, (screenSize.height-20) / 4 * r - getMaxRes(currentRow) * scaleHeight, this.getWidth(), (screenSize.height-20) / 4 * r - getMaxRes(currentRow) * scaleHeight));
+                g2.draw(new Line2D.Float(0, (screenSize.height-20) / 4 * r, this.getWidth(), (screenSize.height-20) / 4 * r));
                 break;
             case 4: r = 1;
-                g3.draw(new Line2D.Float(0, this.getHeight() / 4 * r - getMaxRes(currentRow) * 20, this.getWidth(), this.getHeight() / 4 * r - getMaxRes(currentRow) * 20));
+                g3.draw(new Line2D.Float(0, (screenSize.height-20) / 4 * r - getMaxRes(currentRow) * scaleHeight, this.getWidth(), (screenSize.height-20) / 4 * r - getMaxRes(currentRow) * scaleHeight));
+                g2.draw(new Line2D.Float(0, (screenSize.height-20) / 4 * r, this.getWidth(), (screenSize.height-20) / 4 * r));
                 break;
         }
+        g2.dispose();
+        g3.dispose();
     }
 
 

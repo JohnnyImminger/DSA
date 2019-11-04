@@ -14,6 +14,17 @@ public class Gui extends JFrame {
         initComponents();
         this.setVisible(true);
         setOpacity(opacity);
+        addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent e) {
+                super.keyPressed(e);
+                if (opacity != 1){
+                    if(e.getKeyCode() == KeyEvent.VK_F1)System.exit(0);
+                }else {
+                    if(e.getKeyCode() == KeyEvent.VK_F2)System.exit(0);
+                }
+            }
+        });
     }
 
     private void initComponents() {
@@ -29,13 +40,7 @@ public class Gui extends JFrame {
         getContentPane().add(jScrollPane);
         setUndecorated(true);
         setExtendedState(JFrame.MAXIMIZED_BOTH);
-        addKeyListener(new KeyAdapter() {
-            @Override
-            public void keyPressed(KeyEvent e) {
-                super.keyPressed(e);
-                if(e.getKeyCode() == KeyEvent.VK_ESCAPE)System.exit(0);
-            }
-        });
+
         pack();
     }
 }

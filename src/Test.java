@@ -63,7 +63,7 @@ public class Test {
 	private static void printResult() {
 		System.out.println(Arrays.toString(result.toArray()));
 		System.out.println("Dauer: " + jobs[result.get(result.size()-1)-1].ende);
-		new Gui(result.stream().mapToInt(i -> i).toArray() ,jobs[result.get(result.size()-1)-1].ende ,res,1f);
+		new Gui(result.stream().mapToInt(i -> i).toArray() ,jobs[result.get(result.size()-1)-1].ende ,res,false);
 	}
 
 	private static void alg() {

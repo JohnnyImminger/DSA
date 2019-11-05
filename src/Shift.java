@@ -23,7 +23,7 @@ public class Shift {
     public void dispResult() {
         System.out.println(Arrays.toString(result.stream().mapToInt(e -> e.nummer).toArray()));
         System.out.println("Dauer nach shift: " + (result.get(result.size() - 1)).ende);
-        new Gui(result.stream().mapToInt((i) -> i.nummer).toArray(), (result.get(result.size() - 1)).ende, res, 0.5f);
+        new Gui(result.stream().mapToInt((i) -> i.nummer).toArray(), (result.get(result.size() - 1)).ende, res, true);
     }
 
     public int run() {

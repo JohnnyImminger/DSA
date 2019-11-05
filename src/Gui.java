@@ -2,26 +2,39 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.util.ArrayList;
 
 public class Gui extends JFrame {
 
     JPanel panel;
     public javax.swing.JScrollPane jScrollPane;
     private Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+    private static Gui oterInstance;
+    private Gui instance;
 
-    public Gui(int[] resultArray, Integer dauer, int[][] resources, float opacity) {
+    public Gui(int[] resultArray, Integer dauer, int[][] resources, boolean shift) {
+        instance = this;
         this.panel = new MyPanel(this, resultArray, resources ,dauer);
         initComponents();
         this.setVisible(true);
-        setOpacity(opacity);
+
+        if(shift){
+            setOpacity(1f);
+            this.setTitle("shift");
+            oterInstance = this;
+        }else{
+            setOpacity(1f);
+            this.setTitle("normal");
+        }
+
         addKeyListener(new KeyAdapter() {
             @Override
             public void keyPressed(KeyEvent e) {
                 super.keyPressed(e);
-                if (opacity != 1){
-                    if(e.getKeyCode() == KeyEvent.VK_F1)dispose();
-                }else {
-                    if(e.getKeyCode() == KeyEvent.VK_F2)dispose();
+                if(e.getKeyCode() == KeyEvent.VK_F1) {
+                    setVisible(false);
+                    oterInstance.setVisible(true);
+                    oterInstance = instance;
                 }
             }
         });

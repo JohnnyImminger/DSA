@@ -26,7 +26,7 @@ public class Shift {
         new Gui(result.stream().mapToInt((i) -> i.nummer).toArray(), (result.get(result.size() - 1)).ende, res, 0.5f);
     }
 
-    public void run() {
+    public int run() {
         for(latestFinishCurrJob = duration; index >= 0; --index) {
             Job currJob = result.get(index);
             currJob.nachfolger.forEach((n) -> latestFinishCurrJob = Math.min(latestFinishCurrJob, jobs[n - 1].start));
@@ -37,11 +37,13 @@ public class Shift {
                 --latestStart;
             }
 
-            rebaseJob(currJob);
+            rebaseJob(currJob, latestStart);
             latestFinishCurrJob = duration;
         }
 
         this.trim();
+
+        return result.get(result.size() - 1).ende;
     }
 
     private void trim() {
@@ -55,12 +57,6 @@ public class Shift {
             res[i][1] = res[i + start][1];
             res[i][2] = res[i + start][2];
             res[i][3] = res[i + start][3];
-        }
-        for(int i = (result.get(result.size() - 1)).ende + 1; i < Test.getHorizon(); ++i) {
-            res[i][0] = Test.getRes(0);
-            res[i][1] = Test.getRes(1);
-            res[i][2] = Test.getRes(2);
-            res[i][3] = Test.getRes(3);
         }
     }
 
@@ -77,14 +73,15 @@ public class Shift {
         return b;
     }
 
-    private void rebaseJob(Job job) {
+    private void rebaseJob(Job job, int newStart) {
+        job.start = newStart;
+        job.ende = newStart + job.dauer;
         for(int i = 0; i < job.dauer; ++i) {
             res[job.start + i][0] -= job.verwendeteResource(0);
             res[job.start + i][1] -= job.verwendeteResource(1);
             res[job.start + i][2] -= job.verwendeteResource(2);
             res[job.start + i][3] -= job.verwendeteResource(3);
         }
-
     }
 
     private void releaseJob(Job job) {

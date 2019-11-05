@@ -27,7 +27,7 @@ public class Shift {
     }
 
     public int run() {
-        for(latestFinishCurrJob = duration; index >= 0; --index) {
+        for(index = duration; index >= 0; --index) {
             Job currJob = result.get(index);
             currJob.nachfolger.forEach((n) -> latestFinishCurrJob = Math.min(latestFinishCurrJob, jobs[n - 1].start));
             int latestStart = latestFinishCurrJob - currJob.dauer;

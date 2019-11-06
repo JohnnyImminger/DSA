@@ -31,11 +31,15 @@ public class Gui extends JFrame {
             @Override
             public void keyPressed(KeyEvent e) {
                 super.keyPressed(e);
-                if(e.getKeyCode() == KeyEvent.VK_F1) {
-                    setVisible(false);
-                    oterInstance.setVisible(true);
-                    oterInstance = instance;
+                switch (e.getKeyCode()){
+                    case  KeyEvent.VK_F1:
+                        setVisible(false);
+                        oterInstance.setVisible(true);
+                        oterInstance = instance;
+                    case KeyEvent.VK_ESCAPE:
+                         System.exit(0);
                 }
+
             }
         });
     }

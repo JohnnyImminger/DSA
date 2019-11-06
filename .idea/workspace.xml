@@ -1,16 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="404a12dc-2141-43a7-800b-63ea4b92c5de" name="Default Changelist" comment="gitignore">
+    <list default="true" id="404a12dc-2141-43a7-800b-63ea4b92c5de" name="Default Changelist" comment="frameswap implemented">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Scheduler/Gui$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Scheduler/Gui$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Scheduler/Gui.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Scheduler/Gui.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Scheduler/Shift.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Scheduler/Shift.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Scheduler/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Scheduler/Test.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/out.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Shift.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Shift.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Test.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,7 +129,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572944720839</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="frameswap implemented">
+      <created>1572947381385</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1572947381385</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -153,7 +153,8 @@
     <MESSAGE value="fix close operation in gui" />
     <MESSAGE value="add input, add interation over intput" />
     <MESSAGE value="gitignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="gitignore" />
+    <MESSAGE value="frameswap implemented" />
+    <option name="LAST_COMMIT_MESSAGE" value="frameswap implemented" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="118" key="#Notifications" timestamp="1572943974811">
@@ -176,26 +177,26 @@
       <screen x="0" y="0" width="1714" height="1103" />
     </state>
     <state x="638" y="306" key="FileChooserDialogImpl/0.0.1714.1103@0.0.1714.1103" timestamp="1572425374256" />
-    <state width="1671" height="307" key="GridCell.Tab.0.bottom" timestamp="1572947222430">
+    <state width="1671" height="307" key="GridCell.Tab.0.bottom" timestamp="1572947880234">
       <screen x="0" y="0" width="1714" height="1103" />
     </state>
     <state width="1493" height="185" key="GridCell.Tab.0.bottom/0.0.1536.920@0.0.1536.920" timestamp="1572944138144" />
-    <state width="1671" height="307" key="GridCell.Tab.0.bottom/0.0.1714.1103@0.0.1714.1103" timestamp="1572947222430" />
-    <state width="1671" height="307" key="GridCell.Tab.0.center" timestamp="1572947222430">
+    <state width="1671" height="307" key="GridCell.Tab.0.bottom/0.0.1714.1103@0.0.1714.1103" timestamp="1572947880234" />
+    <state width="1671" height="307" key="GridCell.Tab.0.center" timestamp="1572947880234">
       <screen x="0" y="0" width="1714" height="1103" />
     </state>
     <state width="1493" height="185" key="GridCell.Tab.0.center/0.0.1536.920@0.0.1536.920" timestamp="1572944138144" />
-    <state width="1671" height="307" key="GridCell.Tab.0.center/0.0.1714.1103@0.0.1714.1103" timestamp="1572947222430" />
-    <state width="1671" height="307" key="GridCell.Tab.0.left" timestamp="1572947222430">
+    <state width="1671" height="307" key="GridCell.Tab.0.center/0.0.1714.1103@0.0.1714.1103" timestamp="1572947880234" />
+    <state width="1671" height="307" key="GridCell.Tab.0.left" timestamp="1572947880234">
       <screen x="0" y="0" width="1714" height="1103" />
     </state>
     <state width="1493" height="185" key="GridCell.Tab.0.left/0.0.1536.920@0.0.1536.920" timestamp="1572944138144" />
-    <state width="1671" height="307" key="GridCell.Tab.0.left/0.0.1714.1103@0.0.1714.1103" timestamp="1572947222430" />
-    <state width="1671" height="307" key="GridCell.Tab.0.right" timestamp="1572947222430">
+    <state width="1671" height="307" key="GridCell.Tab.0.left/0.0.1714.1103@0.0.1714.1103" timestamp="1572947880234" />
+    <state width="1671" height="307" key="GridCell.Tab.0.right" timestamp="1572947880234">
       <screen x="0" y="0" width="1714" height="1103" />
     </state>
     <state width="1493" height="185" key="GridCell.Tab.0.right/0.0.1536.920@0.0.1536.920" timestamp="1572944138144" />
-    <state width="1671" height="307" key="GridCell.Tab.0.right/0.0.1714.1103@0.0.1714.1103" timestamp="1572947222430" />
+    <state width="1671" height="307" key="GridCell.Tab.0.right/0.0.1714.1103@0.0.1714.1103" timestamp="1572947880234" />
     <state width="1671" height="373" key="GridCell.Tab.1.bottom" timestamp="1572269736867">
       <screen x="0" y="0" width="1714" height="1103" />
     </state>

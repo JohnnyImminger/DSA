@@ -1,20 +1,17 @@
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import java.util.ArrayList;
 
 public class Gui extends JFrame {
 
     JPanel panel;
     public javax.swing.JScrollPane jScrollPane;
     private Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-    private static Gui oterInstance;
-    private Gui instance;
+    private static Gui shiftInstance;
+    private static Gui normalInstance;
 
     public Gui(Integer dauer, int[][] resources, boolean shift) {
-        instance = this;
         this.panel = new MyPanel(this, resources ,dauer);
         initComponents();
         this.setVisible(true);
@@ -22,10 +19,11 @@ public class Gui extends JFrame {
         if(shift){
             setOpacity(1f);
             this.setTitle("shift");
-            oterInstance = this;
+            shiftInstance = this;
         }else{
             setOpacity(1f);
             this.setTitle("normal");
+            normalInstance = this;
         }
 
         addKeyListener(new KeyListener() {
@@ -34,24 +32,24 @@ public class Gui extends JFrame {
 
 
             }
-
             @Override
             public void keyPressed(KeyEvent e) {
 
             }
-
             @Override
             public void keyReleased(KeyEvent e) {
-                if(e.getKeyCode() == KeyEvent.VK_F1){
-                    setVisible(false);
-
-                }else if(e.getKeyCode() == KeyEvent.VK_F1 && !shift){
-
+                if(e.getKeyCode() == KeyEvent.VK_F1) {
+                    shiftInstance.setVisible(false);
+                    normalInstance.setVisible(true);
+                }else if(e.getKeyCode() == KeyEvent.VK_F2) {
+                    shiftInstance.setVisible(true);
+                    normalInstance.setVisible(false);
                 }else if(e.getKeyCode() == KeyEvent.VK_ESCAPE){
                     System.exit(0);
                 }
             }
         });
+
     }
 
     private void initComponents() {

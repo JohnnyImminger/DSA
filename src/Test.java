@@ -42,10 +42,10 @@ public class Test {
 		}
 	     */
 
-		jobs = Job.read(new File("input/j1201_5.sm"));//best makespan=112
-		resources = Resource.read(new File("input/j1201_5.sm"));
-		//jobs = Job.read(new File("input/j12046_8.sm"));
-		//resources = Resource.read(new File("input/j12046_8.sm"));
+		//jobs = Job.read(new File("input/j1201_5.sm"));//best makespan=112
+		//resources = Resource.read(new File("input/j1201_5.sm"));
+		jobs = Job.read(new File("input/j12046_8.sm"));
+		resources = Resource.read(new File("input/j12046_8.sm"));
 		//jobs = Job.read(new File("input/j12.sm"));
 		//resources = Resource.read(new File("input/j12.sm"));
 		setup();

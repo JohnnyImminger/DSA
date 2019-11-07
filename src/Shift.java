@@ -18,6 +18,7 @@ public class Shift {
         result.forEach((e) -> this.result.add(jobs[e - 1]));
         this.index = result.size() - 2;
         this.duration = duration;
+        this.latestFinishCurrJob = duration;
     }
 
     public void dispResult() {
@@ -27,9 +28,9 @@ public class Shift {
     }
 
     public int run() {
-        for(index = duration; index >= 0; --index) {
-            Job currJob = result.get(index);
-            currJob.nachfolger.forEach((n) -> latestFinishCurrJob = Math.min(latestFinishCurrJob, jobs[n - 1].start));
+        result.sort((a,b) -> -1);
+        for(Job currJob : result) {
+            currJob.nachfolger.forEach(n -> latestFinishCurrJob = Math.min(latestFinishCurrJob, jobs[n-1].start));
             int latestStart = latestFinishCurrJob - currJob.dauer;
             releaseJob(currJob);
 
@@ -43,6 +44,7 @@ public class Shift {
 
         this.trim();
 
+        result.sort((a,b) -> -1);
         return result.get(result.size() - 1).ende;
     }
 
@@ -52,7 +54,7 @@ public class Shift {
             e.start = e.start - start;
             e.ende = e.ende - start;
         });
-        for(int i = 0; i < (result.get(result.size() - 1)).ende; ++i) {
+        for(int i = 0; i < (result.get(result.size() - 1)).ende; i++) {
             res[i][0] = res[i + start][0];
             res[i][1] = res[i + start][1];
             res[i][2] = res[i + start][2];
@@ -61,22 +63,22 @@ public class Shift {
     }
 
     private boolean checkRes(Job job, int instant) {
-        boolean b = true;
-        for(int i = 0; i < job.dauer; ++i) {
+        if(instant < 0) throw new IllegalArgumentException("\n\tIndex less than 0.\n\t" + job.toString() + "\n\tinstant:" + instant);
+        for(int i = 0; i < job.dauer; i++) {
             if (res[instant + i][0] < job.verwendeteResource(0) ||
                     res[instant + i][1] < job.verwendeteResource(1) ||
                     res[instant + i][2] < job.verwendeteResource(2) ||
                     res[instant + i][3] < job.verwendeteResource(3)) {
-                b = false;
+                return false;
             }
         }
-        return b;
+        return true;
     }
 
     private void rebaseJob(Job job, int newStart) {
         job.start = newStart;
         job.ende = newStart + job.dauer;
-        for(int i = 0; i < job.dauer; ++i) {
+        for(int i = 0; i < job.dauer; i++) {
             res[job.start + i][0] -= job.verwendeteResource(0);
             res[job.start + i][1] -= job.verwendeteResource(1);
             res[job.start + i][2] -= job.verwendeteResource(2);
@@ -85,7 +87,7 @@ public class Shift {
     }
 
     private void releaseJob(Job job) {
-        for(int i = 0; i < job.dauer; ++i) {
+        for(int i = 0; i < job.dauer; i++) {
             res[job.start + i][0] += job.verwendeteResource(0);
             res[job.start + i][1] += job.verwendeteResource(1);
             res[job.start + i][2] += job.verwendeteResource(2);

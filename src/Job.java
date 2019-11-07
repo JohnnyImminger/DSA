@@ -39,7 +39,8 @@ public class Job {
 	
 	
 	public String toString() {
-		return "flag: " + vorgaengerFlag + ", start: " + start + ", ende: " + ende + ", vorgänger: " + Arrays.toString(vorgaenger.toArray());
+		return "Job: " + nummer + ", flag: " + vorgaengerFlag + ", start: " + start + ", ende: " + ende + ", vorgänger: " + Arrays.toString(vorgaenger.toArray())
+				 + ", Res: " + Arrays.toString(verwendeteResourcen);
 	}
 	
 	public Job(int nummer, ArrayList<Integer> nachfolger, int dauer, int[] verwendeteResourcen){

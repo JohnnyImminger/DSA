@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.util.ArrayList;
 
 public class Gui extends JFrame {
@@ -27,19 +28,31 @@ public class Gui extends JFrame {
             this.setTitle("normal");
         }
 
-        addKeyListener(new KeyAdapter() {
+        addKeyListener(new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+
+
+            }
+
             @Override
             public void keyPressed(KeyEvent e) {
-                super.keyPressed(e);
-                switch (e.getKeyCode()){
-                    case  KeyEvent.VK_F1:
-                        setVisible(false);
-                        oterInstance.setVisible(true);
-                        oterInstance = instance;
-                    case KeyEvent.VK_ESCAPE:
-                         System.exit(0);
-                }
 
+            }
+
+            @Override
+            public void keyReleased(KeyEvent e) {
+                if(e.getKeyCode() == KeyEvent.VK_F1 &&shift){
+                    setVisible(false);
+                    oterInstance.setVisible(true);
+                    oterInstance = instance;
+                }else if(e.getKeyCode() == KeyEvent.VK_F2 &&!shift){
+                    setVisible(false);
+                    oterInstance.setVisible(true);
+                    oterInstance = instance;
+                }else if(e.getKeyCode() == KeyEvent.VK_ESCAPE){
+                    System.exit(0);
+                }
             }
         });
     }

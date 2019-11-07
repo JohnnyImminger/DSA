@@ -13,12 +13,11 @@ public class MyPanel extends javax.swing.JPanel {
     private JFrame parent;
     private Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 
-    public MyPanel(JFrame parent, int[] resultArray, int[][] resources , int dauer){
+    public MyPanel(JFrame parent, int[][] resources , int dauer){
         this.parent = parent;
         this.scaleWidth = 30*(dauer+5);
         initComponents();
         this.resources = resources;
-        this.resultArray = resultArray;
         this.dauer = dauer;
         this.maxRes = this.getMaxRes();
         this.scaleHeight = ((screenSize.height-20)/(resources[0].length))/maxRes;

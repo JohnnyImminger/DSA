@@ -13,9 +13,9 @@ public class Gui extends JFrame {
     private static Gui oterInstance;
     private Gui instance;
 
-    public Gui(int[] resultArray, Integer dauer, int[][] resources, boolean shift) {
+    public Gui(Integer dauer, int[][] resources, boolean shift) {
         instance = this;
-        this.panel = new MyPanel(this, resultArray, resources ,dauer);
+        this.panel = new MyPanel(this, resources ,dauer);
         initComponents();
         this.setVisible(true);
 
@@ -42,14 +42,11 @@ public class Gui extends JFrame {
 
             @Override
             public void keyReleased(KeyEvent e) {
-                if(e.getKeyCode() == KeyEvent.VK_F1 &&shift){
+                if(e.getKeyCode() == KeyEvent.VK_F1){
                     setVisible(false);
-                    oterInstance.setVisible(true);
-                    oterInstance = instance;
-                }else if(e.getKeyCode() == KeyEvent.VK_F2 &&!shift){
-                    setVisible(false);
-                    oterInstance.setVisible(true);
-                    oterInstance = instance;
+
+                }else if(e.getKeyCode() == KeyEvent.VK_F1 && !shift){
+
                 }else if(e.getKeyCode() == KeyEvent.VK_ESCAPE){
                     System.exit(0);
                 }

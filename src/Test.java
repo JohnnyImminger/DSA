@@ -53,17 +53,26 @@ public class Test {
 		jobs[0].start = 0;
 		jobs[0].ende = 0;
 		alg();
-		printResult();
+
+		int [][] resNeu = new int[horizon][4];
+		for (int c = 0; c < res.length; c++) {
+			for (int i = 0; i < res[0].length;i++) {
+				resNeu[c][i] = res[c][i];
+			}
+		}
+
+		int dauer = jobs[result.get(result.size()-1)-1].ende;
+		printResult(resNeu, dauer);
+
 		Shift s = new Shift(jobs, resources, res, result, jobs[result.get(result.size()-1)-1].ende);
 		s.run();
 		s.dispResult();
-
 	}
 
-	private static void printResult() {
+	private static void printResult(int [][] res, int dauer) {
 		System.out.println(Arrays.toString(result.toArray()));
 		System.out.println("Dauer: " + jobs[result.get(result.size()-1)-1].ende);
-		new Gui(result.stream().mapToInt(i -> i).toArray() ,jobs[result.get(result.size()-1)-1].ende ,res,false);
+		new Gui(dauer ,res,false);
 	}
 
 	private static void alg() {

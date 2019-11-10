@@ -21,53 +21,58 @@ public class Test {
 	private static ArrayList<Integer> result = new ArrayList<>();
 
 	public static void main (String[] args) throws IOException {
-	    /*
-		BufferedWriter bw = new BufferedWriter(new FileWriter(new File("output/out.csv")));
-		Shift shift;
-		for (int i = 1; i <= 60; i++) {
-			for (int j = 1; j <= 10 ; j++) {
-				String name = "input/j120" + i + "_" + j + ".sm";
-				jobs = Job.read(new File(name));
-				resources = Resource.read(new File(name));
-				setup();
-				updatePool(jobs[0]);
-				jobs[0].start = 0;
-				jobs[0].ende = 0;
-				alg();
-				shift = new Shift(jobs, resources, res, result, jobs[result.get(result.size()-1)-1].ende);
-				bw.write(name + "," + jobs[result.get(result.size()-1)-1].ende + "," + shift.run());
-				bw.newLine();
-				bw.flush();
-			}
-		}
-	     */
+        doAll();
 
-		//jobs = Job.read(new File("input/j1201_5.sm"));//best makespan=112
-		//resources = Resource.read(new File("input/j1201_5.sm"));
-		jobs = Job.read(new File("input/j12046_8.sm"));
-		resources = Resource.read(new File("input/j12046_8.sm"));
-		//jobs = Job.read(new File("input/j12.sm"));
-		//resources = Resource.read(new File("input/j12.sm"));
-		setup();
-		updatePool(jobs[0]);
-		jobs[0].start = 0;
-		jobs[0].ende = 0;
-		alg();
-
-		int [][] resNeu = new int[horizon][4];
-		for (int c = 0; c < res.length; c++) {
-			for (int i = 0; i < res[0].length;i++) {
-				resNeu[c][i] = res[c][i];
-			}
-		}
-
-		int dauer = jobs[result.get(result.size()-1)-1].ende;
-		printResult(resNeu, dauer);
-
-		Shift s = new Shift(jobs, resources, res, result, jobs[result.get(result.size()-1)-1].ende);
-		s.run();
-		s.dispResult();
+        //doOne("input/j1201_5.sm"); //makespan: 112
+        //doOne("input/j12046_8.sm");
+		//doOne("input/j12.sm");
+		doOne("input/j1201_4.sm");
 	}
+
+	private static void doAll() throws IOException {
+        BufferedWriter bw = new BufferedWriter(new FileWriter(new File("output/out.csv")));
+        for (int i = 1; i <= 60; i++) {
+            for (int j = 1; j <= 10 ; j++) {
+                String name = "input/j120" + i + "_" + j + ".sm";
+                jobs = Job.read(new File(name));
+                resources = Resource.read(new File(name));
+                setup();
+                updatePool(jobs[0]);
+                jobs[0].start = 0;
+                jobs[0].ende = 0;
+                alg();
+
+                Shift shift = new Shift(jobs, resources, res, result, jobs[result.get(result.size()-1)-1].ende);
+                bw.write(name + "," + jobs[result.get(result.size()-1)-1].ende + "," + shift.run());
+                bw.newLine();
+                bw.flush();
+                System.out.println("file " + name + " done");
+            }
+        }
+    }
+    private static void doOne(String filename) throws FileNotFoundException{
+        jobs = Job.read(new File(filename));
+        resources = Resource.read(new File(filename));
+        setup();
+        updatePool(jobs[0]);
+        jobs[0].start = 0;
+        jobs[0].ende = 0;
+        alg();
+
+        int [][] resNeu = new int[horizon][4];
+        for (int c = 0; c < res.length; c++) {
+            for (int i = 0; i < res[0].length;i++) {
+                resNeu[c][i] = res[c][i];
+            }
+        }
+
+        int dauer = jobs[result.get(result.size()-1)-1].ende;
+        printResult(resNeu, dauer);
+
+        Shift s = new Shift(jobs, resources, res, result, jobs[result.get(result.size()-1)-1].ende);
+        s.run();
+        s.dispResult();
+    }
 
 	private static void printResult(int [][] res, int dauer) {
 		System.out.println(Arrays.toString(result.toArray()));
@@ -100,6 +105,7 @@ public class Test {
 		job.ende = startzeit + job.dauer;
 		result.add(job.nummer);
 		updatePool(job);
+
 	}
 
 	private static boolean isPlatz(Job job, int startzeit) {
@@ -127,6 +133,9 @@ public class Test {
 	}
 
 	private static void setup() {
+	    result = new ArrayList<>();
+	    planbar = new ArrayList<>();
+	    horizon = 0;
 		for (Job job : jobs) {
 			job.calculatePredecessors(jobs);
 			horizon += job.dauer;

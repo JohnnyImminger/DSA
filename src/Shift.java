@@ -7,7 +7,6 @@ public class Shift {
     private Resource[] resources;
     private int[][] res;
     private ArrayList<Job> result = new ArrayList();
-    private int index;
     private int duration;
     private int latestFinishCurrJob;
 
@@ -16,7 +15,6 @@ public class Shift {
         this.resources = resources;
         this.res = res;
         result.forEach((e) -> this.result.add(jobs[e - 1]));
-        this.index = result.size() - 2;
         this.duration = duration;
         this.latestFinishCurrJob = duration;
     }
@@ -42,9 +40,9 @@ public class Shift {
             latestFinishCurrJob = duration;
         }
 
+        result.sort((a,b) -> a.start.compareTo(b.start));
         this.trim();
 
-        result.sort((a,b) -> -1);
         return result.get(result.size() - 1).ende;
     }
 

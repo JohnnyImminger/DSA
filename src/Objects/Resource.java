@@ -1,3 +1,4 @@
+package Objects;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -9,7 +10,7 @@ public class Resource {
 	private int nummer;
 	
 	// Maximum availability 
-	 int maxVerfuegbarkeit;
+	public int maxVerfuegbarkeit;
 		
 	public Resource(int verfuegbarkeit, int nummer){
 		this.maxVerfuegbarkeit = verfuegbarkeit;

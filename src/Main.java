@@ -1,10 +1,13 @@
 
 
+import Algorithems.Shift;
+import Grapics.Gui;
+import Objects.Job;
+import Objects.Resource;
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Date;
-import java.util.Random;
 
 public class Main {
 	
@@ -198,7 +201,7 @@ public class Main {
 	
 	private static void auslesen(Resource[] resource) {
 		for (Resource value : resource) {
-			System.out.print("Resource: " + value.nummer() + "     |    ");
+			System.out.print("Objects.Resource: " + value.nummer() + "     |    ");
 			System.out.println("Verfuegbarkeit: " + value.maxVerfuegbarkeit());
 		}
 	}

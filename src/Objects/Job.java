@@ -1,4 +1,4 @@
-/*
+package Objects;/*
  * Einlese-Programm wurde von Studierende der HFT Stuttgart entwickelt 
  */
 
@@ -11,24 +11,24 @@ import java.util.Scanner;
 public class Job {
 
 	// Number of a job
-	int nummer;
+	public int nummer;
 
-	int vorgaengerFlag;
+	public int vorgaengerFlag;
 
 	//Zeitpunkt des starts
-	Integer start = null;
+	public Integer start = null;
 
 	//zeitpunkt des endes
-	Integer ende = null;
+	public Integer ende = null;
 	
 	// successors; each element contains the job-number (int)
-	ArrayList<Integer> nachfolger;
+	public ArrayList<Integer> nachfolger;
 	
 	// predecessors; each element contains the job-number (int)
-	ArrayList<Integer> vorgaenger;
+	public ArrayList<Integer> vorgaenger;
 	
 	// duration of a job
-	int dauer;
+	public int dauer;
 	
 	// needed resource capacities  
 	// verwendeteResourcen[0] --> capacities of resource R1
@@ -39,7 +39,7 @@ public class Job {
 	
 	
 	public String toString() {
-		return "Job: " + nummer + ", flag: " + vorgaengerFlag + ", start: " + start + ", ende: " + ende + ", vorgänger: " + Arrays.toString(vorgaenger.toArray())
+		return "Objects.Job: " + nummer + ", flag: " + vorgaengerFlag + ", start: " + start + ", ende: " + ende + ", vorgänger: " + Arrays.toString(vorgaenger.toArray())
 				 + ", Res: " + Arrays.toString(verwendeteResourcen);
 	}
 	

@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="404a12dc-2141-43a7-800b-63ea4b92c5de" name="Default Changelist" comment="Test classes added">
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+    <list default="true" id="404a12dc-2141-43a7-800b-63ea4b92c5de" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Scheduler/Gui.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Scheduler/Gui.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Scheduler/MyPanel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Scheduler/Test.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MyPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GuiPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unitTest/src/Job.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/unitTest/src/Resource.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/unitTest/src/Shift.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/unitTest/src/Test.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/unitTest/unitTest.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Scheduler/Gui$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Scheduler/Gui.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Scheduler/Job.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Scheduler/Resource.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Scheduler/Shift.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Grapics/Gui.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GuiPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Grapics/GuiPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Job.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Objects/Job.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Resource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Objects/Resource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shift.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Algorithems/Shift.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,7 +137,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572863810347</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Renaming">
+      <created>1573466366693</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1573466366693</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -155,7 +161,9 @@
     <MESSAGE value="fix close operation in gui" />
     <MESSAGE value="add input, add interation over intput" />
     <MESSAGE value="nothing" />
-    <option name="LAST_COMMIT_MESSAGE" value="nothing" />
+    <MESSAGE value="Test classes added" />
+    <MESSAGE value="Renaming" />
+    <option name="LAST_COMMIT_MESSAGE" value="Renaming" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="118" key="#Notifications" timestamp="1572943974811">
@@ -174,6 +182,10 @@
       <screen x="0" y="0" width="1714" height="1103" />
     </state>
     <state x="588" y="298" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1714.1103@0.0.1714.1103" timestamp="1572337700856" />
+    <state x="371" y="146" key="CommitChangelistDialog2" timestamp="1573466364574">
+      <screen x="0" y="0" width="1714" height="1103" />
+    </state>
+    <state x="371" y="146" key="CommitChangelistDialog2/0.0.1714.1103@0.0.1714.1103" timestamp="1573466364574" />
     <state width="389" height="466" key="DebuggerActiveHint" timestamp="1572267940657">
       <screen x="0" y="0" width="1714" height="1103" />
     </state>
@@ -182,26 +194,26 @@
       <screen x="0" y="0" width="1714" height="1103" />
     </state>
     <state x="638" y="306" key="FileChooserDialogImpl/0.0.1714.1103@0.0.1714.1103" timestamp="1572425374256" />
-    <state width="1671" height="307" key="GridCell.Tab.0.bottom" timestamp="1573466242661">
+    <state width="1671" height="307" key="GridCell.Tab.0.bottom" timestamp="1573466695808">
       <screen x="0" y="0" width="1714" height="1103" />
     </state>
     <state width="1493" height="185" key="GridCell.Tab.0.bottom/0.0.1536.920@0.0.1536.920" timestamp="1573418238118" />
-    <state width="1671" height="307" key="GridCell.Tab.0.bottom/0.0.1714.1103@0.0.1714.1103" timestamp="1573466242661" />
-    <state width="1671" height="307" key="GridCell.Tab.0.center" timestamp="1573466242661">
+    <state width="1671" height="307" key="GridCell.Tab.0.bottom/0.0.1714.1103@0.0.1714.1103" timestamp="1573466695808" />
+    <state width="1671" height="307" key="GridCell.Tab.0.center" timestamp="1573466695808">
       <screen x="0" y="0" width="1714" height="1103" />
     </state>
     <state width="1493" height="185" key="GridCell.Tab.0.center/0.0.1536.920@0.0.1536.920" timestamp="1573418238117" />
-    <state width="1671" height="307" key="GridCell.Tab.0.center/0.0.1714.1103@0.0.1714.1103" timestamp="1573466242661" />
-    <state width="1671" height="307" key="GridCell.Tab.0.left" timestamp="1573466242645">
+    <state width="1671" height="307" key="GridCell.Tab.0.center/0.0.1714.1103@0.0.1714.1103" timestamp="1573466695808" />
+    <state width="1671" height="307" key="GridCell.Tab.0.left" timestamp="1573466695808">
       <screen x="0" y="0" width="1714" height="1103" />
     </state>
     <state width="1493" height="185" key="GridCell.Tab.0.left/0.0.1536.920@0.0.1536.920" timestamp="1573418238116" />
-    <state width="1671" height="307" key="GridCell.Tab.0.left/0.0.1714.1103@0.0.1714.1103" timestamp="1573466242645" />
-    <state width="1671" height="307" key="GridCell.Tab.0.right" timestamp="1573466242661">
+    <state width="1671" height="307" key="GridCell.Tab.0.left/0.0.1714.1103@0.0.1714.1103" timestamp="1573466695808" />
+    <state width="1671" height="307" key="GridCell.Tab.0.right" timestamp="1573466695808">
       <screen x="0" y="0" width="1714" height="1103" />
     </state>
     <state width="1493" height="185" key="GridCell.Tab.0.right/0.0.1536.920@0.0.1536.920" timestamp="1573418238117" />
-    <state width="1671" height="307" key="GridCell.Tab.0.right/0.0.1714.1103@0.0.1714.1103" timestamp="1573466242661" />
+    <state width="1671" height="307" key="GridCell.Tab.0.right/0.0.1714.1103@0.0.1714.1103" timestamp="1573466695808" />
     <state width="1493" height="300" key="GridCell.Tab.1.bottom" timestamp="1573162870270">
       <screen x="0" y="0" width="1536" height="920" />
     </state>

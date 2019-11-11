@@ -1,3 +1,9 @@
+package Algorithems;
+
+import Grapics.Gui;
+import Objects.Job;
+import Objects.Resource;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 

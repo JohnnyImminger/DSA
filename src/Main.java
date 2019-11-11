@@ -3,9 +3,10 @@
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.Random;
 
-public class Test {
+public class Main {
 	
 	private static ArrayList<Integer>planbar = new ArrayList<>();
 
@@ -21,12 +22,14 @@ public class Test {
 	private static ArrayList<Integer> result = new ArrayList<>();
 
 	public static void main (String[] args) throws IOException {
+		long start = System.nanoTime();
         doAll();
-
+        long end = System.nanoTime();
+		System.out.println("Done in " + String.valueOf(end-start) +"ms.");
         //doOne("input/j1201_5.sm"); //makespan: 112
         //doOne("input/j12046_8.sm");
 		//doOne("input/j12.sm");
-		doOne("input/j1201_4.sm");
+		//doOne("input/j1201_4.sm");
 	}
 
 	private static void doAll() throws IOException {

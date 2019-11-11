@@ -12,7 +12,7 @@ public class Gui extends JFrame {
     private static Gui normalInstance;
 
     public Gui(Integer dauer, int[][] resources, boolean shift) {
-        this.panel = new MyPanel(this, resources ,dauer);
+        this.panel = new GuiPanel(this, resources ,dauer);
         initComponents();
         this.setVisible(true);
 

@@ -2,7 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.geom.Line2D;
 
-public class MyPanel extends javax.swing.JPanel {
+public class GuiPanel extends javax.swing.JPanel {
 
     int[][] resources;
     int[] resultArray;
@@ -13,7 +13,7 @@ public class MyPanel extends javax.swing.JPanel {
     private JFrame parent;
     private Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 
-    public MyPanel(JFrame parent, int[][] resources , int dauer){
+    public GuiPanel(JFrame parent, int[][] resources , int dauer){
         this.parent = parent;
         this.scaleWidth = 30*(dauer+5);
         initComponents();

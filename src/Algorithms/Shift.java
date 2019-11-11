@@ -1,4 +1,4 @@
-package Algorithems;
+package Algorithms;
 
 import Grapics.Gui;
 import Objects.Job;
@@ -15,6 +15,7 @@ public class Shift {
     private ArrayList<Job> result = new ArrayList();
     private int duration;
     private int latestFinishCurrJob;
+    private int earliestStartCurrJob = 0;
 
     public Shift(Job[] jobs, Resource[] resources, int[][] res, ArrayList<Integer> result, int duration) {
         this.jobs = jobs;
@@ -26,29 +27,36 @@ public class Shift {
     }
 
     public void dispResult() {
-        System.out.println(Arrays.toString(result.stream().mapToInt(e -> e.nummer).toArray()));
         System.out.println("Dauer nach shift: " + (result.get(result.size() - 1)).ende);
         new Gui((result.get(result.size() - 1)).ende, res, true);
     }
 
-    public int run() {
-        result.sort((a,b) -> -1);
-        for(Job currJob : result) {
-            currJob.nachfolger.forEach(n -> latestFinishCurrJob = Math.min(latestFinishCurrJob, jobs[n-1].start));
-            int latestStart = latestFinishCurrJob - currJob.dauer;
-            releaseJob(currJob);
-
-            while(!checkRes(currJob, latestStart)) {
-                --latestStart;
+    public int run(boolean direction) {
+        if(direction) {
+            result.sort((a, b) -> -1);
+            for (Job currJob : result) {
+                currJob.nachfolger.forEach(n -> latestFinishCurrJob = Math.min(latestFinishCurrJob, jobs[n - 1].start));
+                int latestStart = latestFinishCurrJob - currJob.dauer;
+                releaseJob(currJob);
+                while (!checkRes(currJob, latestStart)) {
+                    latestStart--;
+                }
+                rebaseJob(currJob, latestStart);
+                latestFinishCurrJob = duration;
             }
-
-            rebaseJob(currJob, latestStart);
-            latestFinishCurrJob = duration;
+        }else {
+            for (Job currJob : result) {
+                currJob.vorgaenger.forEach(n -> earliestStartCurrJob = Math.max(earliestStartCurrJob, jobs[n - 1].ende));
+                releaseJob(currJob);
+                while (!checkRes(currJob, earliestStartCurrJob)) {
+                    earliestStartCurrJob++;
+                }
+                rebaseJob(currJob, earliestStartCurrJob);
+                earliestStartCurrJob = 0;
+            }
         }
-
-        result.sort((a,b) -> a.start.compareTo(b.start));
+        result.sort((a, b) -> a.start.compareTo(b.start));
         this.trim();
-
         return result.get(result.size() - 1).ende;
     }
 

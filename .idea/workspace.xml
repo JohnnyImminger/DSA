@@ -1,19 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="404a12dc-2141-43a7-800b-63ea4b92c5de" name="Default Changelist" comment="">
+    <list default="true" id="4c93be76-5984-4b4f-a4f9-7a3b4c7856f3" name="Default Changelist" comment="fix shift bugs">
+      <change afterPath="$PROJECT_DIR$/src/Algorithms/Algorithm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Scheduler/Gui$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Scheduler/Gui.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Scheduler/Job.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Scheduler/Resource.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Scheduler/Shift.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Grapics/Gui.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GuiPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Grapics/GuiPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Job.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Objects/Job.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scheduler.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Scheduler.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Algorithems/Shift.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Algorithms/Shift.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Resource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Objects/Resource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Shift.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Algorithems/Shift.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -178,6 +171,10 @@
       <screen x="0" y="0" width="1714" height="1103" />
     </state>
     <state x="653" y="436" width="407" height="239" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1714.1103@0.0.1714.1103" timestamp="1572337561216" />
+    <state x="310" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1573469559969">
+      <screen x="0" y="0" width="1536" height="920" />
+    </state>
+    <state x="310" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.920@0.0.1536.920" timestamp="1573469559969" />
     <state x="588" y="298" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1572337700856">
       <screen x="0" y="0" width="1714" height="1103" />
     </state>
@@ -194,25 +191,25 @@
       <screen x="0" y="0" width="1714" height="1103" />
     </state>
     <state x="638" y="306" key="FileChooserDialogImpl/0.0.1714.1103@0.0.1714.1103" timestamp="1572425374256" />
-    <state width="1671" height="307" key="GridCell.Tab.0.bottom" timestamp="1573466695808">
-      <screen x="0" y="0" width="1714" height="1103" />
+    <state width="1493" height="185" key="GridCell.Tab.0.bottom" timestamp="1573470377915">
+      <screen x="0" y="0" width="1536" height="920" />
     </state>
-    <state width="1493" height="185" key="GridCell.Tab.0.bottom/0.0.1536.920@0.0.1536.920" timestamp="1573418238118" />
+    <state width="1493" height="185" key="GridCell.Tab.0.bottom/0.0.1536.920@0.0.1536.920" timestamp="1573470377915" />
     <state width="1671" height="307" key="GridCell.Tab.0.bottom/0.0.1714.1103@0.0.1714.1103" timestamp="1573466695808" />
-    <state width="1671" height="307" key="GridCell.Tab.0.center" timestamp="1573466695808">
-      <screen x="0" y="0" width="1714" height="1103" />
+    <state width="1493" height="185" key="GridCell.Tab.0.center" timestamp="1573470377915">
+      <screen x="0" y="0" width="1536" height="920" />
     </state>
-    <state width="1493" height="185" key="GridCell.Tab.0.center/0.0.1536.920@0.0.1536.920" timestamp="1573418238117" />
+    <state width="1493" height="185" key="GridCell.Tab.0.center/0.0.1536.920@0.0.1536.920" timestamp="1573470377915" />
     <state width="1671" height="307" key="GridCell.Tab.0.center/0.0.1714.1103@0.0.1714.1103" timestamp="1573466695808" />
-    <state width="1671" height="307" key="GridCell.Tab.0.left" timestamp="1573466695808">
-      <screen x="0" y="0" width="1714" height="1103" />
+    <state width="1493" height="185" key="GridCell.Tab.0.left" timestamp="1573470377915">
+      <screen x="0" y="0" width="1536" height="920" />
     </state>
-    <state width="1493" height="185" key="GridCell.Tab.0.left/0.0.1536.920@0.0.1536.920" timestamp="1573418238116" />
+    <state width="1493" height="185" key="GridCell.Tab.0.left/0.0.1536.920@0.0.1536.920" timestamp="1573470377915" />
     <state width="1671" height="307" key="GridCell.Tab.0.left/0.0.1714.1103@0.0.1714.1103" timestamp="1573466695808" />
-    <state width="1671" height="307" key="GridCell.Tab.0.right" timestamp="1573466695808">
-      <screen x="0" y="0" width="1714" height="1103" />
+    <state width="1493" height="185" key="GridCell.Tab.0.right" timestamp="1573470377915">
+      <screen x="0" y="0" width="1536" height="920" />
     </state>
-    <state width="1493" height="185" key="GridCell.Tab.0.right/0.0.1536.920@0.0.1536.920" timestamp="1573418238117" />
+    <state width="1493" height="185" key="GridCell.Tab.0.right/0.0.1536.920@0.0.1536.920" timestamp="1573470377915" />
     <state width="1671" height="307" key="GridCell.Tab.0.right/0.0.1714.1103@0.0.1714.1103" timestamp="1573466695808" />
     <state width="1493" height="300" key="GridCell.Tab.1.bottom" timestamp="1573162870270">
       <screen x="0" y="0" width="1536" height="920" />

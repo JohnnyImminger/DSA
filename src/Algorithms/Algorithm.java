@@ -6,7 +6,6 @@ import Objects.Resource;
 
 import java.io.*;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class Algorithm {
 
@@ -23,6 +22,12 @@ public class Algorithm {
     private ArrayList<Integer> planbar = new ArrayList<>();
     private ArrayList<Integer> result = new ArrayList<>();
 
+    private BufferedWriter bwMakespan = new BufferedWriter(new FileWriter(new File("output/makespan.csv")));
+    private BufferedWriter bwResult = new BufferedWriter(new FileWriter(new File("output/result.txt")));
+
+    public Algorithm() throws IOException {
+    }
+
     public void doMultipleShift(String filename) throws FileNotFoundException {
         setup(filename);
         alg();
@@ -35,7 +40,7 @@ public class Algorithm {
         }
         printResult(res, jobs[result.get(result.size()-1)-1].ende);
     }
-    public void doOne(String filename) throws FileNotFoundException {
+    public void doOne(String filename) throws IOException {
         setup(filename);
         alg();
         int [][] resNeu = new int[horizon][4];
@@ -45,25 +50,27 @@ public class Algorithm {
             }
         }
         int dauer = jobs[result.get(result.size()-1)-1].ende;
-        printResult(resNeu, dauer);
+        //printResult(resNeu, dauer);
 
         Shift s = new Shift(jobs, resources, res, result, jobs[result.get(result.size()-1)-1].ende);
         s.run(true);
         s.dispResult();
+
+        writeResult("result", "input/j1201_1.sm", 0);
     }
     public void doAll() throws IOException {
-        BufferedWriter bw = new BufferedWriter(new FileWriter(new File("output/out.csv")));
         for (int i = 1; i <= 60; i++) {
             for (int j = 1; j <= 10 ; j++) {
                 String name = "input/j120" + i + "_" + j + ".sm";
                 setup(name);
                 alg();
 
+                int makespan = jobs[result.get(result.size()-1)-1].ende;
+
                 Shift shift = new Shift(jobs, resources, res, result, jobs[result.get(result.size()-1)-1].ende);
-                bw.write(name + "," + jobs[result.get(result.size()-1)-1].ende + "," + shift.run(true));
-                bw.newLine();
-                bw.flush();
-                //System.out.println("file " + name + " done");
+                shift.run(true);
+                writeResult("makespan",name, makespan);
+                writeResult("result", name,0);
             }
         }
     }
@@ -161,6 +168,31 @@ public class Algorithm {
             min = Math.max(min,jobs[job.vorgaenger.get(i)-1].ende);
         }
         return min;
+    }
+
+    private void writeResult(String mode, String srcName, int value) throws IOException{
+        switch(mode) {
+            case "makespan":
+                bwMakespan.write(srcName + "," + value + "," + jobs[result.get(result.size()-1)-1].ende);
+                bwMakespan.newLine();
+                bwMakespan.flush();
+                break;
+            case "result":
+                bwResult.write(srcName);
+                bwResult.newLine();
+                for(Job job: jobs) {
+                    bwResult.write(job.nummer + "\t");
+                    bwResult.flush();
+                }
+                bwResult.newLine();
+                for(Job job : jobs) {
+                    bwResult.write(job.start + "\t");
+                    bwResult.flush();
+                }
+                bwResult.newLine();
+                bwResult.flush();
+                break;
+        }
     }
 
     public int getHorizon() {

@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4c93be76-5984-4b4f-a4f9-7a3b4c7856f3" name="Default Changelist" comment="fix shift bugs">
-      <change afterPath="$PROJECT_DIR$/src/Algorithms/Algorithm.java" afterDir="false" />
+    <list default="true" id="4c93be76-5984-4b4f-a4f9-7a3b4c7856f3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/validate/ValidateResult.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scheduler.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Scheduler.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Algorithems/Shift.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Algorithms/Shift.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Algorithms/Algorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Algorithms/Algorithm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageViewManager">
+    <option name="myElementSize" value="209" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -156,7 +158,8 @@
     <MESSAGE value="nothing" />
     <MESSAGE value="Test classes added" />
     <MESSAGE value="Renaming" />
-    <option name="LAST_COMMIT_MESSAGE" value="Renaming" />
+    <MESSAGE value="refactor" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor" />
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="118" key="#Notifications" timestamp="1572943974811">
@@ -179,9 +182,10 @@
       <screen x="0" y="0" width="1714" height="1103" />
     </state>
     <state x="588" y="298" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1714.1103@0.0.1714.1103" timestamp="1572337700856" />
-    <state x="371" y="146" key="CommitChangelistDialog2" timestamp="1573466364574">
-      <screen x="0" y="0" width="1714" height="1103" />
+    <state x="332" y="109" key="CommitChangelistDialog2" timestamp="1573470924009">
+      <screen x="0" y="0" width="1536" height="920" />
     </state>
+    <state x="332" y="109" key="CommitChangelistDialog2/0.0.1536.920@0.0.1536.920" timestamp="1573470924009" />
     <state x="371" y="146" key="CommitChangelistDialog2/0.0.1714.1103@0.0.1714.1103" timestamp="1573466364574" />
     <state width="389" height="466" key="DebuggerActiveHint" timestamp="1572267940657">
       <screen x="0" y="0" width="1714" height="1103" />
@@ -191,45 +195,45 @@
       <screen x="0" y="0" width="1714" height="1103" />
     </state>
     <state x="638" y="306" key="FileChooserDialogImpl/0.0.1714.1103@0.0.1714.1103" timestamp="1572425374256" />
-    <state width="1493" height="185" key="GridCell.Tab.0.bottom" timestamp="1573470377915">
+    <state width="1493" height="185" key="GridCell.Tab.0.bottom" timestamp="1573725640507">
       <screen x="0" y="0" width="1536" height="920" />
     </state>
-    <state width="1493" height="185" key="GridCell.Tab.0.bottom/0.0.1536.920@0.0.1536.920" timestamp="1573470377915" />
+    <state width="1493" height="185" key="GridCell.Tab.0.bottom/0.0.1536.920@0.0.1536.920" timestamp="1573725640507" />
     <state width="1671" height="307" key="GridCell.Tab.0.bottom/0.0.1714.1103@0.0.1714.1103" timestamp="1573466695808" />
-    <state width="1493" height="185" key="GridCell.Tab.0.center" timestamp="1573470377915">
+    <state width="1493" height="185" key="GridCell.Tab.0.center" timestamp="1573725640507">
       <screen x="0" y="0" width="1536" height="920" />
     </state>
-    <state width="1493" height="185" key="GridCell.Tab.0.center/0.0.1536.920@0.0.1536.920" timestamp="1573470377915" />
+    <state width="1493" height="185" key="GridCell.Tab.0.center/0.0.1536.920@0.0.1536.920" timestamp="1573725640507" />
     <state width="1671" height="307" key="GridCell.Tab.0.center/0.0.1714.1103@0.0.1714.1103" timestamp="1573466695808" />
-    <state width="1493" height="185" key="GridCell.Tab.0.left" timestamp="1573470377915">
+    <state width="1493" height="185" key="GridCell.Tab.0.left" timestamp="1573725640507">
       <screen x="0" y="0" width="1536" height="920" />
     </state>
-    <state width="1493" height="185" key="GridCell.Tab.0.left/0.0.1536.920@0.0.1536.920" timestamp="1573470377915" />
+    <state width="1493" height="185" key="GridCell.Tab.0.left/0.0.1536.920@0.0.1536.920" timestamp="1573725640507" />
     <state width="1671" height="307" key="GridCell.Tab.0.left/0.0.1714.1103@0.0.1714.1103" timestamp="1573466695808" />
-    <state width="1493" height="185" key="GridCell.Tab.0.right" timestamp="1573470377915">
+    <state width="1493" height="185" key="GridCell.Tab.0.right" timestamp="1573725640507">
       <screen x="0" y="0" width="1536" height="920" />
     </state>
-    <state width="1493" height="185" key="GridCell.Tab.0.right/0.0.1536.920@0.0.1536.920" timestamp="1573470377915" />
+    <state width="1493" height="185" key="GridCell.Tab.0.right/0.0.1536.920@0.0.1536.920" timestamp="1573725640507" />
     <state width="1671" height="307" key="GridCell.Tab.0.right/0.0.1714.1103@0.0.1714.1103" timestamp="1573466695808" />
-    <state width="1493" height="300" key="GridCell.Tab.1.bottom" timestamp="1573162870270">
+    <state width="1493" height="300" key="GridCell.Tab.1.bottom" timestamp="1573725021395">
       <screen x="0" y="0" width="1536" height="920" />
     </state>
-    <state width="1493" height="300" key="GridCell.Tab.1.bottom/0.0.1536.920@0.0.1536.920" timestamp="1573162870270" />
+    <state width="1493" height="300" key="GridCell.Tab.1.bottom/0.0.1536.920@0.0.1536.920" timestamp="1573725021395" />
     <state width="1671" height="373" key="GridCell.Tab.1.bottom/0.0.1714.1103@0.0.1714.1103" timestamp="1572269736867" />
-    <state width="1493" height="300" key="GridCell.Tab.1.center" timestamp="1573162870270">
+    <state width="1493" height="300" key="GridCell.Tab.1.center" timestamp="1573725021395">
       <screen x="0" y="0" width="1536" height="920" />
     </state>
-    <state width="1493" height="300" key="GridCell.Tab.1.center/0.0.1536.920@0.0.1536.920" timestamp="1573162870270" />
+    <state width="1493" height="300" key="GridCell.Tab.1.center/0.0.1536.920@0.0.1536.920" timestamp="1573725021395" />
     <state width="1671" height="373" key="GridCell.Tab.1.center/0.0.1714.1103@0.0.1714.1103" timestamp="1572269736867" />
-    <state width="1493" height="300" key="GridCell.Tab.1.left" timestamp="1573162870270">
+    <state width="1493" height="300" key="GridCell.Tab.1.left" timestamp="1573725021395">
       <screen x="0" y="0" width="1536" height="920" />
     </state>
-    <state width="1493" height="300" key="GridCell.Tab.1.left/0.0.1536.920@0.0.1536.920" timestamp="1573162870270" />
+    <state width="1493" height="300" key="GridCell.Tab.1.left/0.0.1536.920@0.0.1536.920" timestamp="1573725021395" />
     <state width="1671" height="373" key="GridCell.Tab.1.left/0.0.1714.1103@0.0.1714.1103" timestamp="1572269736867" />
-    <state width="1493" height="300" key="GridCell.Tab.1.right" timestamp="1573162870270">
+    <state width="1493" height="300" key="GridCell.Tab.1.right" timestamp="1573725021395">
       <screen x="0" y="0" width="1536" height="920" />
     </state>
-    <state width="1493" height="300" key="GridCell.Tab.1.right/0.0.1536.920@0.0.1536.920" timestamp="1573162870270" />
+    <state width="1493" height="300" key="GridCell.Tab.1.right/0.0.1536.920@0.0.1536.920" timestamp="1573725021395" />
     <state width="1671" height="373" key="GridCell.Tab.1.right/0.0.1714.1103@0.0.1714.1103" timestamp="1572269736867" />
     <state x="481" y="176" key="MultipleFileMergeDialog" timestamp="1573127144033">
       <screen x="0" y="0" width="1536" height="920" />
@@ -239,10 +243,10 @@
       <screen x="0" y="0" width="1714" height="1103" />
     </state>
     <state x="366" y="194" key="SettingsEditor/0.0.1714.1103@0.0.1714.1103" timestamp="1572852634288" />
-    <state x="361" y="193" key="Vcs.Push.Dialog.v2" timestamp="1572944005805">
+    <state x="361" y="193" key="Vcs.Push.Dialog.v2" timestamp="1573470931747">
       <screen x="0" y="0" width="1536" height="920" />
     </state>
-    <state x="361" y="193" key="Vcs.Push.Dialog.v2/0.0.1536.920@0.0.1536.920" timestamp="1572944005805" />
+    <state x="361" y="193" key="Vcs.Push.Dialog.v2/0.0.1536.920@0.0.1536.920" timestamp="1573470931747" />
     <state x="212" y="390" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1573127133779">
       <screen x="0" y="0" width="1536" height="920" />
     </state>
@@ -252,9 +256,13 @@
       <screen x="0" y="0" width="1536" height="920" />
     </state>
     <state x="209" y="80" key="new project wizard/0.0.1536.920@0.0.1536.920" timestamp="1572965681168" />
-    <state x="520" y="241" width="672" height="678" key="search.everywhere.popup" timestamp="1572852339110">
-      <screen x="0" y="0" width="1714" height="1103" />
+    <state x="466" y="201" width="672" height="566" key="search.everywhere.popup" timestamp="1573490260890">
+      <screen x="0" y="0" width="1536" height="920" />
     </state>
+    <state x="466" y="201" width="672" height="566" key="search.everywhere.popup/0.0.1536.920@0.0.1536.920" timestamp="1573490260890" />
     <state x="520" y="241" width="672" height="678" key="search.everywhere.popup/0.0.1714.1103@0.0.1714.1103" timestamp="1572852339110" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Scheduler$Main.ic" NAME="Main Coverage Results" MODIFIED="1573490578859" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
